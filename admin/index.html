@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة نور | Noor Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110f;--ink2:#1c1814;--cream:#f6efe4;--sand:#d9c9ae;--gold:#c19a4b;--gold2:#e2c27a;--text:#2a241e;--muted:#7b6f62;--bad:#b3402a;--ok:#3f7d4f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--cream);color:var(--text);min-height:100vh;line-height:1.6}
+button{font:inherit;cursor:pointer;border:0}
+input,textarea,select{font:inherit;width:100%;padding:11px 13px;border-radius:11px;border:1.5px solid var(--sand);background:#fffdf9;color:var(--text)}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(193,154,75,.2)}
+.btn{padding:10px 20px;border-radius:999px;font-weight:600;background:var(--ink);color:var(--gold2);transition:transform .15s,box-shadow .25s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2b1f0a}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--sand)}
+.btn.bad{background:transparent;color:var(--bad);border:1.5px solid #e0b8ae}
+.btn.sm{padding:6px 14px;font-size:.85rem}
+.center{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(70% 55% at 50% 20%,rgba(226,194,122,.25),transparent 70%),var(--ink)}
+.card{background:var(--cream);border-radius:20px;padding:30px;width:min(420px,100%);box-shadow:0 30px 80px -20px #000}
+.card h1{font-size:1.5rem;margin-bottom:4px}.card p.sub{color:var(--muted);margin-bottom:18px;font-size:.92rem}
+.card label{display:grid;gap:6px;margin-bottom:14px;font-weight:600;font-size:.92rem}
+.msg{min-height:1.4em;font-weight:600;font-size:.9rem;margin-bottom:8px}.msg.err{color:var(--bad)}.msg.ok{color:var(--ok)}
+.links{display:flex;justify-content:space-between;margin-top:14px;font-size:.88rem}
+.links button{background:none;color:var(--muted);text-decoration:underline}
+.mode{margin-top:14px;padding:10px 12px;border-radius:10px;background:#fff6dd;border:1px solid #ecd9a0;font-size:.82rem;color:#6a5516}
+header.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px clamp(16px,3vw,32px);background:var(--ink);color:var(--cream);position:sticky;top:0;z-index:5}
+header.bar b{font-size:1.25rem;color:var(--gold2)}
+.bar .actions{display:flex;gap:8px;flex-wrap:wrap}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:22px;width:min(1200px,100% - 28px);margin:22px auto}
+aside{background:#fffaf0;border-radius:16px;padding:14px;border:1px solid var(--sand);height:fit-content;position:sticky;top:76px}
+aside h3{font-size:.85rem;color:var(--muted);margin:6px 8px 10px}
+.cats{list-style:none;display:grid;gap:4px}
+.cats button{width:100%;text-align:start;padding:10px 12px;border-radius:10px;background:transparent;font-weight:600;display:flex;justify-content:space-between}
+.cats button:hover{background:#f0e6d1}.cats button.on{background:var(--ink);color:var(--gold2)}
+.cats small{opacity:.6}
+.panel{background:#fffaf0;border-radius:16px;padding:20px;border:1px solid var(--sand);margin-bottom:18px}
+.panel h2{font-size:1.2rem;margin-bottom:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.item{background:#fff;border:1px solid var(--sand);border-radius:14px;overflow:hidden;display:grid}
+.thumb{aspect-ratio:16/10;background:linear-gradient(160deg,#3a3026,#17130f);display:grid;place-items:center;color:var(--gold2);overflow:hidden;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.item .f{padding:12px;display:grid;gap:8px}
+.item .row{display:flex;gap:6px;flex-wrap:wrap}
+.drop{border:2px dashed var(--sand);border-radius:14px;padding:18px;text-align:center;color:var(--muted);transition:all .2s}
+.drop.over{border-color:var(--gold);background:#fbf3df}
+.toast{position:fixed;bottom:20px;inset-inline:0;margin-inline:auto;width:fit-content;background:var(--ink);color:var(--gold2);padding:10px 22px;border-radius:999px;box-shadow:0 12px 30px -8px #000;opacity:0;transform:translateY(10px);transition:all .3s;z-index:20;pointer-events:none}
+.toast.show{opacity:1;transform:none}
+dialog{border:0;border-radius:18px;padding:0;background:transparent}dialog::backdrop{background:rgba(10,8,6,.7);backdrop-filter:blur(4px)}
+@media(max-width:820px){.layout{grid-template-columns:1fr}aside{position:static}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="center" id="loginView" hidden>
+  <form class="card" id="loginForm" novalidate>
+    <h1>لوحة نور</h1>
+    <p class="sub" id="loginSub">أدخل كلمة السر للدخول.</p>
+    <label id="emailRow" hidden>البريد الإلكتروني <input id="lEmail" type="email" autocomplete="username" dir="ltr"></label>
+    <label>كلمة السر <input id="lPass" type="password" autocomplete="current-password" dir="ltr"></label>
+    <p class="msg" id="lMsg" role="status"></p>
+    <button class="btn gold" style="width:100%" type="submit" id="lBtn">دخول</button>
+    <div class="links"><button type="button" id="forgotBtn">نسيت كلمة السر</button><a href="../" style="color:var(--muted)">الموقع</a></div>
+    <div class="mode" id="modeNote" hidden></div>
+  </form>
+</div>
+
+<!-- RESET (after email link) -->
+<div class="center" id="resetView" hidden>
+  <form class="card" id="resetForm" novalidate>
+    <h1>كلمة سر جديدة</h1>
+    <p class="sub">اختر كلمة سر جديدة للدخول.</p>
+    <label>كلمة السر الجديدة <input id="rPass" type="password" autocomplete="new-password" dir="ltr" minlength="8"></label>
+    <p class="msg" id="rMsg"></p>
+    <button class="btn gold" style="width:100%" type="submit">حفظ</button>
+  </form>
+</div>
+
+<!-- APP -->
+<div id="appView" hidden>
+  <header class="bar">
+    <b>نور · لوحة التحكم</b>
+    <div class="actions">
+      <button class="btn ghost sm" id="settingsBtn" style="color:var(--cream);border-color:#ffffff40">الإعدادات</button>
+      <a class="btn ghost sm" href="../" target="_blank" style="color:var(--cream);border-color:#ffffff40;text-decoration:none">عرض الموقع</a>
+      <button class="btn gold sm" id="logoutBtn">خروج</button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside>
+      <h3>الأقسام</h3>
+      <ul class="cats" id="catList"></ul>
+      <div style="margin-top:12px;display:grid;gap:8px">
+        <input id="newCat" placeholder="قسم جديد (عربي)">
+        <input id="newCatEn" placeholder="New category (English)" dir="ltr">
+        <button class="btn sm" id="addCat">إضافة قسم</button>
+      </div>
+    </aside>
+    <section id="catPanel"></section>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<dialog id="settingsDlg">
+  <div class="card" style="width:min(460px,92vw)">
+    <h1>الإعدادات</h1>
+    <p class="sub">رقم الواتساب وكلمة السر.</p>
+    <label>رقم الواتساب (بصيغة دولية بدون +، مثال 965XXXXXXXX)
+      <input id="sWa" inputmode="numeric" dir="ltr" placeholder="965XXXXXXXX"></label>
+    <button class="btn gold sm" id="saveWa" style="margin-bottom:18px">حفظ الرقم</button>
+    <hr style="border:0;border-top:1px dashed var(--sand);margin:6px 0 16px">
+    <label id="oldRow">كلمة السر الحالية <input id="sOld" type="password" dir="ltr" autocomplete="current-password"></label>
+    <label>كلمة السر الجديدة (٨ أحرف على الأقل) <input id="sNew" type="password" dir="ltr" autocomplete="new-password"></label>
+    <p class="msg" id="sMsg"></p>
+    <div style="display:flex;gap:8px"><button class="btn sm" id="savePw">تغيير كلمة السر</button><button class="btn ghost sm" id="closeSettings">إغلاق</button></div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast"></div>
+
+<script src="../config.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/store.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
