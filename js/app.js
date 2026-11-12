@@ -25,15 +25,17 @@
 
   /* ---------- process ---------- */
   function renderSteps() {
+    if (!$("#steps")) return;
     $("#steps").innerHTML = DATA.process.map((s) =>
       `<li class="step reveal"><h3>${esc(nm(s))}</h3><p>${esc(ds(s))}</p></li>`).join("");
   }
 
   /* ---------- fabrics ---------- */
   function renderFabrics() {
+    if (!$("#fabricsGrid")) return;
     $("#fabricsGrid").innerHTML = DATA.fabrics.map((f) => `
       <article class="fabric reveal">
-        <div class="swatch f-${f.id}" style="--c:${f.color}"></div>
+        <div class="swatch" style="--c:${f.color};background-image:url('${esc(f.img || "")}')" role="img" aria-label="${esc(nm(f))}"></div>
         <div class="fabric-body">
           <h3>${esc(nm(f))}</h3><p>${esc(ds(f))}</p>
           <div class="meter">
@@ -49,6 +51,7 @@
   const cat = { c: 0, i: 0 };
   const chairIcon = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 6h24v20H12zM8 26h32v8H8zM12 34v8M36 34v8"/></svg>';
   function renderCatalog() {
+    if (!$("#catTabs")) return;
     const cats = DATA.categories;
     cat.c = clamp(cat.c, 0, cats.length - 1);
     $("#catTabs").innerHTML = cats.map((c, i) =>
@@ -91,6 +94,7 @@
     $$("#dots button").forEach((b, i) => b.classList.toggle("on", i === cat.i));
   }
   function bindCatalog() {
+    if (!$("#catTabs")) return;
     $("#catTabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (!b) return; cat.c = +b.dataset.c; cat.i = 0; renderCatalog(); });
     $("#dots").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; cat.i = +b.dataset.i; slide(0); });
     // next means "to the reading end": in RTL that is left
@@ -105,9 +109,6 @@
       if (Math.abs(dx) > 50) slide((dx > 0) === (lang === "ar") ? 1 : -1);
     });
     document.addEventListener("keydown", (e) => {
-      if (!$("#roomModal").hidden) { if (e.key === "Escape") closeRoom(); return; }
-      const r = $("#catalog").getBoundingClientRect();
-      if (r.top > innerHeight || r.bottom < 0) return;
       if (e.key === "ArrowRight") slide(lang === "ar" ? -1 : 1);
       if (e.key === "ArrowLeft") slide(lang === "ar" ? 1 : -1);
     });
@@ -115,6 +116,7 @@
 
   /* ---------- rooms ---------- */
   function renderRooms() {
+    if (!$("#roomsGrid")) return;
     $("#roomsGrid").innerHTML = DATA.rooms.map((r, i) => `
       <button class="room reveal" data-r="${i}" type="button">
         <div class="room-bg ${r.angles.length ? "" : "ph"}" ${r.angles.length ? `style="background-image:url('${esc(r.angles[0])}')"` : ""}></div>
@@ -168,6 +170,8 @@
     vw.a = (vw.a + d + n) % n; drawViewer();
   }
   function bindRooms() {
+    if (!$("#roomsGrid")) return;
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#roomModal").hidden) closeRoom(); });
     $("#roomsGrid").addEventListener("click", (e) => { const b = e.target.closest(".room"); if (b) openRoom(+b.dataset.r); });
     $("#roomModal").addEventListener("click", (e) => { if (e.target.hasAttribute("data-close")) closeRoom(); });
     $("#vPrev").addEventListener("click", () => turn(-1));
@@ -253,12 +257,13 @@
     });
   }
   function drawBuilder(animate) {
+    if (!$("#buildSteps")) return;
     $("#buildSteps").innerHTML = STEP_KEYS.map((k, i) =>
       `<li><button class="bstep ${i + 1 === B.step ? "on" : i + 1 < B.step ? "done" : ""}" data-s="${i + 1}" type="button">${i + 1}. ${t(k)}</button></li>`).join("");
     let o = "";
     if (B.step === 1) o = ["oak", "walnut", "beech"].map((k) => `<button class="opt${B.wood === k ? " on" : ""}" data-k="wood" data-v="${k}">${t("build." + k)}</button>`).join("");
     if (B.step === 2) o = ["soft", "medium", "firm"].map((k) => `<button class="opt${B.foam === k ? " on" : ""}" data-k="foam" data-v="${k}">${t("build." + k)}</button>`).join("");
-    if (B.step === 3) o = DATA.fabrics.map((f) => `<button class="opt${B.fabric === f.id ? " on" : ""}" data-k="fabric" data-v="${f.id}">${esc(nm(f))}</button>`).join("");
+    if (B.step === 3) o = DATA.fabrics.map((f) => `<button class="opt opt-fab${B.fabric === f.id ? " on" : ""}" data-k="fabric" data-v="${f.id}"><i style="background-image:url('${esc(f.img || "")}')"></i>${esc(nm(f))}</button>`).join("");
     if (B.step === 4) o = COLORS.map((c) => `<button class="dot${B.color === c ? " on" : ""}" data-k="color" data-v="${c}" style="--c:${c}" aria-label="${c}"></button>`).join("");
     if (B.step === 5) o = [2, 3, 4].map((n) => `<button class="opt${B.seats === n ? " on" : ""}" data-k="seats" data-v="${n}">${t("build.seat" + n)}</button>`).join("");
     $("#buildOptions").innerHTML = o;
@@ -270,6 +275,7 @@
     return [t("build." + B.wood), t("build." + B.foam), f ? nm(f) : "", B.color.toUpperCase(), t("build.seat" + B.seats)].join(" · ");
   }
   function bindBuilder() {
+    if (!$("#buildStage")) return;
     $("#buildStage").innerHTML = sofaSVG();
     $("#buildSteps").addEventListener("click", (e) => { const b = e.target.closest(".bstep"); if (!b) return; B.step = +b.dataset.s; drawBuilder(true); });
     $("#buildOptions").addEventListener("click", (e) => {
@@ -279,16 +285,14 @@
       drawBuilder(false);
     });
     $("#buildSend").addEventListener("click", () => {
-      $("#fBuild").value = buildText();
-      const sofaCat = DATA.categories.find((c) => c.id === "sofas");
-      if (sofaCat) $("#fType").value = "sofas";
-      location.hash = "#request";
-      setTimeout(() => $("#fDesc").focus({ preventScroll: true }), 600);
+      try { sessionStorage.setItem("noor_build", buildText()); } catch (e) {}
+      location.href = "request.html";
     });
   }
 
   /* ---------- request form ---------- */
   function fillFormOptions() {
+    if (!$("#fType")) return;
     const cur = $("#fType").value, curF = $("#fFabric").value;
     $("#fType").innerHTML = `<option value="">${t("form.pick")}</option>` +
       DATA.categories.map((c) => `<option value="${esc(c.id)}">${esc(nm(c))}</option>`).join("") + `<option value="other">${t("form.other")}</option>`;
@@ -312,6 +316,16 @@
     return lines.join("\n");
   }
   function bindForm() {
+    if (!$("#reqForm")) return;
+    let pending = null;
+    try { pending = sessionStorage.getItem("noor_build"); } catch (e) {}
+    if (pending) {
+      $("#fBuild").value = pending;
+      const note = $("#buildNote"); note.hidden = false;
+      const paint = () => { note.innerHTML = `<b>${t("form.build")}:</b> ${esc(pending)}`; };
+      paint(); note.dataset.paint = "1"; window.__paintBuildNote = paint;
+      fillFormOptions(); if ($("#fType")) $("#fType").value = "sofas";
+    }
     $$("input[name=hasM]").forEach((r) => r.addEventListener("change", () => { $("#dims").hidden = $("input[name=hasM]:checked").value !== "yes"; }));
     $("#reqForm").addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -326,15 +340,11 @@
         msg.textContent = t("form.nonum");
       }
     });
-    const wf = $("#waFloat");
-    wf.addEventListener("click", (e) => {
-      const num = waNumber();
-      if (num) { e.preventDefault(); window.open(`https://wa.me/${num}`, "_blank", "noopener"); }
-    });
   }
 
   /* ---------- hero scroll scene ---------- */
   function initHero() {
+    if (!$("#hero")) return;
     const frames = (DATA.hero && DATA.hero.frames) || [];
     const box = $("#heroFrames");
     box.innerHTML = frames.map((s, i) => `<img src="${esc(s)}" alt="" ${i < 2 ? "" : 'loading="lazy"'} decoding="async">`).join("");
@@ -362,7 +372,12 @@
   /* ---------- effects ---------- */
   function initEffects() {
     const header = $(".site-header");
-    const onS = () => header.classList.toggle("solid", scrollY > 40);
+    const inner = document.body.classList.contains("inner");
+    const onS = () => header.classList.toggle("solid", inner || scrollY > 40);
+    $("#waFloat").addEventListener("click", (e) => {
+      const num = waNumber();
+      if (num) { e.preventDefault(); window.open(`https://wa.me/${num}`, "_blank", "noopener"); }
+    });
     addEventListener("scroll", onS, { passive: true }); onS();
     document.addEventListener("pointermove", (e) => {
       const b = e.target.closest && e.target.closest(".btn"); if (!b) return;
@@ -385,10 +400,28 @@
   }
 
   /* ---------- boot ---------- */
+  const HOME_CARDS = [
+    ["process.html", "nav.process", "card.process", "assets/catalog/beds/1.jpg"],
+    ["rooms.html", "nav.rooms", "card.rooms", "assets/hero/03-door.jpg"],
+    ["fabrics.html", "nav.fabrics", "card.fabrics", "assets/fabrics/velvet.jpg"],
+    ["catalog.html", "nav.catalog", "card.catalog", "assets/catalog/sofas/2.jpg"],
+    ["build.html", "nav.build", "card.build", "assets/catalog/chairs/1.jpg"],
+    ["request.html", "nav.request", "card.request", "assets/hero/02-gate.jpg"]
+  ];
+  function renderHomeCards() {
+    if (!$("#homeCards")) return;
+    $("#homeCards").innerHTML = HOME_CARDS.map(([href, tk, dk, img]) => `
+      <a class="card-link reveal" href="${href}">
+        <span class="card-img" style="background-image:url('${img}')"></span>
+        <span class="card-body"><b>${t(tk)}</b><small>${t(dk)}</small><em>${t("card.go")}</em></span>
+      </a>`).join("");
+  }
   function renderAll() {
-    applyI18n(); renderSteps(); renderRooms(); renderFabrics(); renderCatalog(); fillFormOptions();
+    applyI18n(); renderHomeCards(); renderSteps(); renderRooms(); renderFabrics(); renderCatalog(); fillFormOptions();
     drawBuilder(false); observeReveals();
-    if (!$("#roomModal").hidden) drawViewer(true);
+    if ($("#roomModal") && !$("#roomModal").hidden) drawViewer(true);
+    if (window.__paintBuildNote) window.__paintBuildNote();
+    if ($("#fType") && $("#fBuild") && $("#fBuild").value) $("#fType").value = $("#fType").value || "sofas";
   }
   async function boot() {
     DATA = await window.NoorStore.getData();
@@ -399,8 +432,7 @@
     });
     bindCatalog(); bindRooms(); bindBuilder(); bindForm(); initEffects();
     renderAll(); initHero();
-    B.step = 1; drawBuilder(true);
-    setTimeout(() => $("#Lframe").classList.add("in"), 300);
+    if ($("#Lframe")) { B.step = 1; drawBuilder(true); setTimeout(() => $("#Lframe").classList.add("in"), 300); }
   }
   boot();
 })();

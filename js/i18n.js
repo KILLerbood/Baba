@@ -40,6 +40,12 @@ window.NOOR_I18N = {
     "wa.hello": "طلب جديد من موقع نور", "wa.what": "المطلوب", "wa.desc": "الوصف", "wa.measure": "المقاسات",
     "wa.hasno": "ليس لدي مقاسات، أحتاج زيارة", "wa.fabric": "القماش", "wa.name": "الاسم", "wa.phone": "الهاتف", "wa.area": "المنطقة", "wa.build": "التركيب المختار",
     "foot.text": "نور · تصنيع وتنجيد الأثاث في الكويت", "foot.admin": "الأدمن",
+    "nav.home": "الرئيسية", "card.go": "افتح",
+    "card.process": "من المعاينة حتى التركيب، خمس خطوات واضحة.", "card.rooms": "شاهد إمكانياتنا في كل غرفة من البيت.",
+    "card.fabrics": "أقمشة وجلود حقيقية بألوان متعددة.", "card.catalog": "أمثلة من شغلنا في كل قسم.",
+    "card.build": "اختر الخشب والسفنج والقماش واللون وشاهد القطعة تتركّب.", "card.request": "اكتب ما تريد بناءه ويصلنا على واتساب.",
+    "home.about.more": "اعرف أكثر عنّا", "home.explore": "اكتشف نور",
+    "build.go": "كمّل الطلب", "form.build": "تصميمك المختار",
     "lang.toggle": "EN"
   },
   en: {
@@ -83,6 +89,12 @@ window.NOOR_I18N = {
     "wa.hello": "New request from Noor website", "wa.what": "Item", "wa.desc": "Details", "wa.measure": "Measurements",
     "wa.hasno": "No measurements, needs a visit", "wa.fabric": "Fabric", "wa.name": "Name", "wa.phone": "Phone", "wa.area": "Area", "wa.build": "Chosen build",
     "foot.text": "Noor · Furniture making and upholstery in Kuwait", "foot.admin": "Admin",
+    "nav.home": "Home", "card.go": "Open",
+    "card.process": "From site visit to installation, five clear steps.", "card.rooms": "See what we can do in every room of the home.",
+    "card.fabrics": "Real fabrics and leathers in many colours.", "card.catalog": "Examples of our work in every category.",
+    "card.build": "Pick wood, foam, fabric and colour and watch the piece come together.", "card.request": "Tell us what you want built and it reaches us on WhatsApp.",
+    "home.about.more": "More about us", "home.explore": "Explore Noor",
+    "build.go": "Continue to request", "form.build": "Your chosen design",
     "lang.toggle": "عربي"
   }
 };

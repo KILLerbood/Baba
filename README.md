@@ -30,8 +30,13 @@ npx --yes serve -l 4173 .
 
 ضع الرقم في لوحة الأدمن ← الإعدادات، أو في `config.js` (`WHATSAPP`) بصيغة دولية بدون `+`.
 
+## الصفحات
+
+`index.html` (الرئيسية)، `about.html`، `process.html`، `rooms.html`، `fabrics.html`، `catalog.html`، `build.html`، `request.html`، و`admin/`. الهيدر والفوتر مشتركين من `js/layout.js`.
+
 ## الصور
 
 - صور الدخول: `js/data.js` ← `hero.frames`.
 - صور الغرف: `rooms[].angles`.
-- صور الكتالوج: من لوحة الأدمن.
+- صور الأقمشة: `assets/fabrics/`.
+- صور الكتالوج: `assets/catalog/<القسم>/` أو من لوحة الأدمن.
