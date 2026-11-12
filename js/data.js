@@ -4,7 +4,11 @@ window.NOOR_DEFAULT = {
 
   hero: {
     // مسارات صور مشاهد الدخول (من البيت من فوق إلى الباب). تُضاف بعد توليدها.
-    frames: []
+    frames: [
+      "assets/hero/01-villa-aerial.jpg",
+      "assets/hero/02-gate.jpg",
+      "assets/hero/03-door.jpg"
+    ]
   },
 
   categories: [
