@@ -12,45 +12,310 @@ window.NOOR_DEFAULT = {
   },
 
   categories: [
-    { id: "chairs", ar: "كراسي", en: "Chairs", items: [
-      { id: "ch1", src: "", ar: "كرسي سفرة منجّد", en: "Upholstered dining chair", dar: "هيكل خشب صلب وتنجيد مريح.", den: "Solid wood frame with comfortable upholstery." },
-      { id: "ch2", src: "", ar: "كرسي استرخاء", en: "Lounge chair", dar: "مقعد عميق بسفنج عالي الكثافة.", den: "Deep seat with high-density foam." },
-      { id: "ch3", src: "", ar: "كرسي مكتب جلد", en: "Leather office chair", dar: "جلد طبيعي وخياطة يدوية.", den: "Genuine leather, hand-stitched." }
-    ]},
-    { id: "tables", ar: "طاولات", en: "Tables", items: [
-      { id: "tb1", src: "", ar: "طاولة سفرة", en: "Dining table", dar: "خشب طبيعي بمقاسات حسب الطلب.", den: "Natural wood, made to your size." },
-      { id: "tb2", src: "", ar: "طاولة وسط", en: "Coffee table", dar: "تشطيب يدوي وحواف ناعمة.", den: "Hand-finished with soft edges." },
-      { id: "tb3", src: "", ar: "طاولة اجتماعات", en: "Meeting table", dar: "تصنيع بالمقاس للمكاتب والمجالس.", den: "Custom built for offices and majlis." }
-    ]},
-    { id: "sofas", ar: "كنب", en: "Sofas", items: [
-      { id: "sf1", src: "", ar: "كنب مودرن", en: "Modern sofa", dar: "هيكل خشب وسفنج وتنجيد بالقماش الذي تختاره.", den: "Wood frame, foam and your choice of fabric." },
-      { id: "sf2", src: "", ar: "كنب زاوية", en: "Corner sofa", dar: "يُفصَّل على مقاس الصالة.", den: "Tailored to your living room." },
-      { id: "sf3", src: "", ar: "كنب جلد", en: "Leather sofa", dar: "جلد طبيعي بألوان متعددة.", den: "Genuine leather in many colours." }
-    ]},
-    { id: "beds", ar: "سراير", en: "Beds", items: [
-      { id: "bd1", src: "", ar: "سرير بظهر منجّد", en: "Upholstered headboard bed", dar: "ظهر مبطّن بالقماش أو الجلد.", den: "Padded headboard in fabric or leather." },
-      { id: "bd2", src: "", ar: "سرير خشب", en: "Wooden bed", dar: "خشب صلب بتصميم حسب الطلب.", den: "Solid wood, custom design." },
-      { id: "bd3", src: "", ar: "سرير أطفال", en: "Kids bed", dar: "تصميم آمن وألوان مرحة.", den: "Safe design, playful colours." }
-    ]},
-    { id: "walls", ar: "تنجيد الحيطان", en: "Wall panels", items: [
-      { id: "wl1", src: "", ar: "جدار منجّد", en: "Upholstered wall", dar: "ألواح مبطّنة تضيف دفئًا وعزلًا.", den: "Padded panels for warmth and insulation." },
-      { id: "wl2", src: "", ar: "ظهر سرير بالحائط", en: "Wall headboard", dar: "تنجيد كامل للجدار خلف السرير.", den: "Full wall upholstery behind the bed." },
-      { id: "wl3", src: "", ar: "ألواح عزل صوت", en: "Acoustic panels", dar: "للسينما والاستوديو والجيمنج.", den: "For cinema, studio and gaming rooms." }
-    ]},
-    { id: "cinema", ar: "كراسي السينما", en: "Cinema seats", items: [
-      { id: "cn1", src: "", ar: "مقعد سينما منزلي", en: "Home cinema seat", dar: "جلد وسفنج مريح لساعات طويلة.", den: "Leather and foam for long sessions." },
-      { id: "cn2", src: "", ar: "صف مقاعد", en: "Seating row", dar: "صفوف متصلة بمسند وحامل كوب.", den: "Connected rows with armrests and cup holders." },
-      { id: "cn3", src: "", ar: "مقعد مزدوج", en: "Loveseat", dar: "مقعدان متلاصقان بتنجيد فاخر.", den: "Two seats in luxury upholstery." }
-    ]},
-    { id: "curtains", ar: "ستاير", en: "Curtains", items: [
-      { id: "cr1", src: "", ar: "ستارة قماش ثقيل", en: "Heavy fabric curtain", dar: "تفصيل حسب النافذة والغرفة.", den: "Tailored to your window and room." },
-      { id: "cr2", src: "", ar: "ستارة شفافة", en: "Sheer curtain", dar: "إضاءة ناعمة وخصوصية خفيفة.", den: "Soft light with light privacy." },
-      { id: "cr3", src: "", ar: "ستارة تعتيم", en: "Blackout curtain", dar: "لغرف النوم والسينما.", den: "For bedrooms and cinema rooms." }
-    ]},
-    { id: "swings", ar: "مراجيح", en: "Swings", items: [
-      { id: "sw1", src: "", ar: "مرجيحة حديقة", en: "Garden swing", dar: "هيكل متين ومقعد مريح.", den: "Sturdy frame, comfortable seat." },
-      { id: "sw2", src: "", ar: "مرجيحة معلّقة", en: "Hanging swing", dar: "للشرفات والجلسات الخارجية.", den: "For balconies and outdoor seating." }
-    ]}
+    {
+      "id": "chairs",
+      "ar": "كراسي",
+      "en": "Chairs",
+      "items": [
+        {
+          "id": "ch1",
+          "src": "assets/catalog/chairs/1.jpg",
+          "ar": "كرسي سفرة بتنجيد ناعم",
+          "en": "Soft upholstered dining chair",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ch2",
+          "src": "assets/catalog/chairs/2.jpg",
+          "ar": "كراسي جلد بظهر عالٍ",
+          "en": "High-back leather armchairs",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ch3",
+          "src": "assets/catalog/chairs/3.jpg",
+          "ar": "كراسي جلد برتقالي",
+          "en": "Orange leather chairs",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ch4",
+          "src": "assets/catalog/chairs/4.jpg",
+          "ar": "كرسي خشب كلاسيك",
+          "en": "Classic wooden chair",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "ar": "طاولات",
+      "en": "Tables",
+      "items": [
+        {
+          "id": "ta1",
+          "src": "assets/catalog/tables/1.jpg",
+          "ar": "طاولة سفرة خشب طويلة",
+          "en": "Long wooden dining table",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ta2",
+          "src": "assets/catalog/tables/2.jpg",
+          "ar": "طاولة سفرة مع كراسي منجّدة",
+          "en": "Dining set with upholstered chairs",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ta3",
+          "src": "assets/catalog/tables/3.jpg",
+          "ar": "طاولة سفرة دائرية",
+          "en": "Round dining table",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ta4",
+          "src": "assets/catalog/tables/4.jpg",
+          "ar": "طاولات خارجية",
+          "en": "Outdoor tables",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "sofas",
+      "ar": "كنب",
+      "en": "Sofas",
+      "items": [
+        {
+          "id": "so1",
+          "src": "assets/catalog/sofas/1.jpg",
+          "ar": "جلسة عربية منجّدة",
+          "en": "Upholstered Arabic seating",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "so2",
+          "src": "assets/catalog/sofas/2.jpg",
+          "ar": "كنب زاوية رمادي",
+          "en": "Grey corner sofa",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "so3",
+          "src": "assets/catalog/sofas/3.jpg",
+          "ar": "كنب مخمل أزرق",
+          "en": "Blue velvet sofa",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "so4",
+          "src": "assets/catalog/sofas/4.jpg",
+          "ar": "كنب جلد أزرق",
+          "en": "Blue leather sofas",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "beds",
+      "ar": "سراير",
+      "en": "Beds",
+      "items": [
+        {
+          "id": "be1",
+          "src": "assets/catalog/beds/1.jpg",
+          "ar": "سرير بظهر كابيتونيه",
+          "en": "Tufted headboard bed",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "be2",
+          "src": "assets/catalog/beds/2.jpg",
+          "ar": "غرفة نوم فاخرة",
+          "en": "Luxury bedroom",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "be3",
+          "src": "assets/catalog/beds/3.jpg",
+          "ar": "سرير بظهر مبطّن",
+          "en": "Padded headboard bed",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "be4",
+          "src": "assets/catalog/beds/4.jpg",
+          "ar": "سرير بجدار مميّز",
+          "en": "Bed with a feature wall",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "walls",
+      "ar": "تنجيد الحيطان",
+      "en": "Wall panels",
+      "items": [
+        {
+          "id": "wa1",
+          "src": "assets/catalog/walls/1.jpg",
+          "ar": "ألواح حائط مزخرفة",
+          "en": "Decorative wall panelling",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "wa2",
+          "src": "assets/catalog/walls/2.jpg",
+          "ar": "جدار بإطارات مبطّنة",
+          "en": "Framed wall panel",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "wa3",
+          "src": "assets/catalog/walls/3.jpg",
+          "ar": "جدار بتجويف مقوّس",
+          "en": "Arched wall niche",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "wa4",
+          "src": "assets/catalog/walls/4.jpg",
+          "ar": "جدار بتنجيد وستاير",
+          "en": "Wall upholstery with drapes",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "cinema",
+      "ar": "كراسي السينما",
+      "en": "Cinema seats",
+      "items": [
+        {
+          "id": "ci1",
+          "src": "assets/catalog/cinema/1.jpg",
+          "ar": "مقاعد سينما جلد أحمر",
+          "en": "Red leather cinema seats",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ci2",
+          "src": "assets/catalog/cinema/2.jpg",
+          "ar": "صفوف مقاعد",
+          "en": "Seating rows",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ci3",
+          "src": "assets/catalog/cinema/3.jpg",
+          "ar": "غرفة عرض منزلية",
+          "en": "Home projection room",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "ci4",
+          "src": "assets/catalog/cinema/4.jpg",
+          "ar": "صالة عرض",
+          "en": "Screening hall",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "curtains",
+      "ar": "ستاير",
+      "en": "Curtains",
+      "items": [
+        {
+          "id": "cu1",
+          "src": "assets/catalog/curtains/1.jpg",
+          "ar": "ستاير ثقيلة مع شفاف",
+          "en": "Heavy drapes with sheers",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "cu2",
+          "src": "assets/catalog/curtains/2.jpg",
+          "ar": "ستارة مربوطة",
+          "en": "Tied-back curtain",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "cu3",
+          "src": "assets/catalog/curtains/3.jpg",
+          "ar": "ستاير مخمل أحمر",
+          "en": "Red velvet curtains",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "cu4",
+          "src": "assets/catalog/curtains/4.jpg",
+          "ar": "ستاير شفافة طويلة",
+          "en": "Tall sheer curtains",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    },
+    {
+      "id": "swings",
+      "ar": "مراجيح",
+      "en": "Swings",
+      "items": [
+        {
+          "id": "sw1",
+          "src": "assets/catalog/swings/1.jpg",
+          "ar": "مرجيحة خشب للحديقة",
+          "en": "Wooden garden swing",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "sw2",
+          "src": "assets/catalog/swings/2.jpg",
+          "ar": "مرجيحة على الشاطئ",
+          "en": "Beach swing",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        },
+        {
+          "id": "sw3",
+          "src": "assets/catalog/swings/3.jpg",
+          "ar": "كراسي هزّاز",
+          "en": "Rocking chairs",
+          "dar": "نصنع مثل هذا التصميم بالمقاس واللون والخامة التي تختارها.",
+          "den": "We build a design like this in the size, colour and material you choose."
+        }
+      ]
+    }
   ],
 
   rooms: [

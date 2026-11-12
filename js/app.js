@@ -62,12 +62,27 @@
     const view = $("#slideView");
     if (!items.length) { view.innerHTML = `<div class="slide on"><div class="ph">${t("catalog.empty")}</div></div>`; $("#dots").innerHTML = ""; return; }
     view.innerHTML = items.map((it, i) => `
-      <div class="slide${i === cat.i ? " on" : ""}">
+      <div class="slide${i === cat.i ? " on" : ""}"${it.src ? ` style="--bg:url('${esc(new URL(it.src, document.baseURI).href)}')"` : ""}>
         ${it.src ? `<img src="${esc(it.src)}" alt="${esc(nm(it))}" loading="lazy" draggable="false">` : `<div class="ph">${chairIcon}</div>`}
         <div class="cap"><h3>${esc(nm(it))}</h3>${ds(it) ? `<p>${esc(ds(it))}</p>` : ""}</div>
       </div>`).join("");
     $("#dots").innerHTML = items.map((_, i) => `<button class="${i === cat.i ? "on" : ""}" data-i="${i}" aria-label="${i + 1}"></button>`).join("");
+    fitSlides();
   }
+  // Photos whose shape differs a lot from the frame are shown whole over a blurred copy, others fill the frame.
+  function fitSlides() {
+    const box = $("#slideView").getBoundingClientRect();
+    if (!box.width) return;
+    const frame = box.width / box.height;
+    $$("#slideView .slide img").forEach((im) => {
+      const apply = () => {
+        const r = im.naturalWidth / im.naturalHeight;
+        im.closest(".slide").classList.toggle("fit", Math.abs(r - frame) / frame > 0.22);
+      };
+      im.complete && im.naturalWidth ? apply() : im.addEventListener("load", apply, { once: true });
+    });
+  }
+  addEventListener("resize", () => { if (DATA) fitSlides(); });
   function slide(dir) {
     const items = DATA.categories[cat.c].items || [];
     if (!items.length) return;
