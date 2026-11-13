@@ -373,64 +373,33 @@
     const box = $("#heroFrames");
     box.innerHTML = frames.map((s, i) => `<img src="${esc(s)}" alt="" ${i < 2 ? "" : 'loading="lazy"'} decoding="async">`).join("");
     const imgs = $$("img", box), hero = $("#hero"), copy = $("#heroCopy"), cue = $("#scrollCue");
+    const light = $("#heroLight"), hp = $("#heroPlan"), hpi = $("#hpInner");
     let ticking = false;
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
     function update() {
       ticking = false;
       const total = hero.offsetHeight - innerHeight;
       const p = clamp(-hero.getBoundingClientRect().top / total, 0, 1);
+      const a = clamp(p / 0.5, 0, 1), b = clamp((p - 0.5) / 0.2, 0, 1), c = clamp((p - 0.68) / 0.32, 0, 1);
       if (imgs.length) {
-        const pos = p * (imgs.length - 1), i = Math.floor(pos), f = pos - i;
+        const pos = a * (imgs.length - 1), i = Math.floor(pos), f = pos - i;
         imgs.forEach((im, k) => { im.style.opacity = k <= i ? 1 : k === i + 1 ? f : 0; });
-        box.style.transform = `scale(${1 + p * 0.18})`;
+        box.style.transform = `scale(${1.0 + a * 0.18 + ease(b) * 2.4})`;
       }
-      const fade = clamp(1 - p * 3.2, 0, 1);
-      copy.style.opacity = fade; copy.style.transform = `translateY(${p * -60}px) scale(${1 - p * 0.06})`;
+      const fade = clamp(1 - a * 3.2, 0, 1);
+      copy.style.opacity = fade; copy.style.transform = `translateY(${a * -60}px) scale(${1 - a * 0.06})`;
       copy.style.pointerEvents = fade < 0.2 ? "none" : "";
       cue.style.opacity = clamp(1 - p * 8, 0, 0.8);
-      const eb = $("#enterBtn");
-      if (eb) { const o = clamp((p - 0.8) / 0.15, 0, 1); eb.style.opacity = o; eb.style.pointerEvents = o < 0.3 ? "none" : "auto"; eb.style.transform = `translate(-50%, ${(1 - o) * 14}px)`; }
+      light.style.opacity = clamp((b - 0.4) / 0.6, 0, 1) * (1 - clamp(c * 2.5, 0, 1));
+      hp.style.opacity = clamp(c * 2.5, 0, 1);
+      hpi.style.transform = `scale(${1 + (1 - ease(c)) * 1.7})`;
+      hp.style.pointerEvents = c > 0.9 ? "auto" : "none";
     }
     addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     addEventListener("resize", update);
     update();
-    initWalkIn(frames[frames.length - 1]);
   }
 
-  /* walk through the door, then zoom out onto the top-view villa */
-  function initWalkIn(doorImg) {
-    const eb = $("#enterBtn"), plan = $("#villaPlan"), target = $("#inside .plan-wrap");
-    if (!eb || !plan || !target) return;
-    let busy = false;
-    const still = matchMedia("(prefers-reduced-motion: reduce)").matches || !plan.animate;
-    const goTo = () => {
-      const y = target.getBoundingClientRect().top + scrollY - Math.max(70, (innerHeight - target.offsetHeight) / 2);
-      scrollTo({ top: Math.max(0, y), behavior: "instant" });
-    };
-    eb.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (busy) return;
-      if (still) { $("#inside").scrollIntoView({ behavior: "auto" }); return; }
-      busy = true;
-      const ov = document.createElement("div");
-      ov.style.cssText = "position:fixed;inset:0;z-index:300;overflow:hidden;background:#f4ead6;pointer-events:all";
-      const door = document.createElement("div");
-      door.style.cssText = `position:absolute;inset:0;background:url(${doorImg}) center/cover no-repeat;transform-origin:50% 52%`;
-      const light = document.createElement("div");
-      light.style.cssText = "position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,#fff6dc,#f4ead6 70%);opacity:0";
-      ov.append(door, light); document.body.append(ov);
-      const ease = "cubic-bezier(.55,.05,.35,1)";
-      door.animate([{ transform: "scale(1.18)" }, { transform: "scale(3.6)" }], { duration: 1100, easing: ease, fill: "forwards" });
-      light.animate([{ opacity: 0 }, { opacity: 0, offset: .55 }, { opacity: 1 }], { duration: 1100, easing: ease, fill: "forwards" })
-        .finished.then(() => {
-          target.style.overflow = "hidden"; target.style.borderRadius = "20px";
-          plan.style.transformOrigin = "50% 94%";
-          goTo();
-          const z = plan.animate([{ transform: "scale(2.7)", opacity: .2 }, { transform: "scale(1)", opacity: 1 }], { duration: 1700, easing: "cubic-bezier(.16,.7,.2,1)" });
-          ov.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, easing: "ease-out", fill: "forwards" }).finished.then(() => ov.remove());
-          z.finished.then(() => { target.style.overflow = ""; target.style.borderRadius = ""; plan.style.transformOrigin = ""; busy = false; });
-        });
-    });
-  }
 
   /* ---------- effects ---------- */
   function initEffects() {
