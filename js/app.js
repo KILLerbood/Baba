@@ -119,12 +119,12 @@
   function renderRooms() {
     if (!$("#roomsGrid")) return;
     $("#roomsGrid").innerHTML = DATA.rooms.map((r, i) => r.hidden ? "" : `
-      <button class="room reveal" data-r="${i}" type="button">
+      <button class="room reveal${r.soon ? " soon" : ""}" data-r="${i}" type="button"${r.soon ? " disabled" : ""}>
         <div class="room-bg ${r.angles.length ? "" : "ph"}" ${r.angles.length ? `style="background-image:url('${esc(r.angles[0])}')"` : ""}></div>
         <div class="room-body">
           <h3>${esc(nm(r))}</h3><p>${esc(ds(r))}</p>
           <div class="room-tags">${(lang === "ar" ? r.tags_ar : r.tags_en).map((x) => `<span>${esc(x)}</span>`).join("")}</div>
-          <span class="room-open">${t("rooms.open")}</span>
+          <span class="room-open">${r.soon ? t("rooms.soon") : t("rooms.open")}</span>
         </div>
       </button>`).join("");
   }

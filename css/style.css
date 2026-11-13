@@ -362,3 +362,7 @@ html[lang="en"] .link-arrow::after{content:" →"}
 
 .plan3d.wide{max-width:min(1100px,94vw,calc((100vh - 230px) * 1.792))!important}
 .hero-plan .plan3d.wide{max-width:min(1100px,94vw,calc((100vh - 230px) * 1.792))}
+
+.room.soon{cursor:default}
+.room.soon .room-open{color:var(--muted);font-weight:700}
+.room.soon .room-bg.ph{background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 12px,#efe3cb 12px,#efe3cb 24px)}

@@ -782,6 +782,19 @@ window.NOOR_DEFAULT = {
         }
       ],
       "hidden": false
+    },
+    {
+      "id": "kids",
+      "ar": "غرفة الأطفال",
+      "en": "Kids' room",
+      "dar": "سراير وقعدات ودواليب بتنجيد آمن وألوان مريحة.",
+      "den": "Beds, seating and wardrobes with safe upholstery and soft colours.",
+      "tags_ar": ["سرير أطفال", "تنجيد آمن", "ستاير"],
+      "tags_en": ["Kids bed", "Safe upholstery", "Curtains"],
+      "angles": [],
+      "hotspots": [],
+      "soon": true,
+      "hidden": false
     }
   ],
   "fabrics": [
