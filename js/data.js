@@ -731,18 +731,48 @@ window.NOOR_DEFAULT = {
         "Lounge seating",
         "Lighting"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/gaming-1.jpg"
+      ],
       "hotspots": [
         {
-          "x": 55,
-          "y": 62,
-          "ar": "قعدة الجيمنج",
-          "en": "Gaming seating",
-          "dar": "تنجيد مريح لجلسات طويلة.",
-          "den": "Comfortable upholstery for long sessions."
+          "x": 30,
+          "y": 88,
+          "ar": "الكنبة الركنة",
+          "en": "Corner sofa",
+          "dar": "كنبة ركنة بقماش كحلي سميك وهيكل خشب وسفنج عالي الكثافة، بمقاس الغرفة.",
+          "den": "A deep navy fabric corner sofa on a wood frame with high-density foam, made to the room.",
+          "angle": 0
+        },
+        {
+          "x": 10,
+          "y": 45,
+          "ar": "ألواح الحائط المبطّنة",
+          "en": "Padded wall panels",
+          "dar": "ألواح مبطّنة بقماش رمادي غامق تدفّئ الغرفة وتخفف الصدى.",
+          "den": "Dark grey padded panels warm the room and soften echo.",
+          "angle": 0
+        },
+        {
+          "x": 73,
+          "y": 72,
+          "ar": "كراسي الجيمنج",
+          "en": "Gaming chairs",
+          "dar": "كراسي بتنجيد قماش وجلد، ومسند ظهر عالٍ مريح لجلسات طويلة.",
+          "den": "Fabric and leather upholstery with a high backrest for long sessions.",
+          "angle": 0
+        },
+        {
+          "x": 33,
+          "y": 45,
+          "ar": "دولاب عرض الفيجرز",
+          "en": "Figure display cabinet",
+          "dar": "دواليب زجاج بإضاءة LED لعرض المجسمات والكؤوس.",
+          "den": "Glass cabinets with LED lighting to show off figures and trophies.",
+          "angle": 0
         }
       ],
-      "hidden": true
+      "hidden": false
     }
   ],
   "fabrics": [
