@@ -117,7 +117,7 @@
   /* ---------- rooms ---------- */
   function renderRooms() {
     if (!$("#roomsGrid")) return;
-    $("#roomsGrid").innerHTML = DATA.rooms.map((r, i) => `
+    $("#roomsGrid").innerHTML = DATA.rooms.map((r, i) => r.hidden ? "" : `
       <button class="room reveal" data-r="${i}" type="button">
         <div class="room-bg ${r.angles.length ? "" : "ph"}" ${r.angles.length ? `style="background-image:url('${esc(r.angles[0])}')"` : ""}></div>
         <div class="room-body">
@@ -402,7 +402,7 @@
   /* ---------- boot ---------- */
   const HOME_CARDS = [
     ["process.html", "nav.process", "card.process", "assets/catalog/beds/1.jpg"],
-    ["rooms.html", "nav.rooms", "card.rooms", "assets/hero/03-door.jpg"],
+    ["rooms.html", "nav.rooms", "card.rooms", "assets/rooms/diwaniya-1.jpg"],
     ["fabrics.html", "nav.fabrics", "card.fabrics", "assets/fabrics/velvet.jpg"],
     ["catalog.html", "nav.catalog", "card.catalog", "assets/catalog/sofas/2.jpg"],
     ["build.html", "nav.build", "card.build", "assets/catalog/chairs/1.jpg"],

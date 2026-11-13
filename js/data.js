@@ -7,7 +7,8 @@ window.NOOR_DEFAULT = {
     "frames": [
       "assets/hero/01-villa-aerial.jpg",
       "assets/hero/02-gate.jpg",
-      "assets/hero/03-door.jpg"
+      "assets/hero/03-door.jpg",
+      "assets/hero/04-open-door.jpg"
     ]
   },
   "categories": [
@@ -318,17 +319,58 @@ window.NOOR_DEFAULT = {
         "Wall upholstery",
         "Curtains"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/diwaniya-1.jpg",
+        "assets/rooms/diwaniya-2.jpg"
+      ],
       "hotspots": [
         {
-          "x": 38,
-          "y": 62,
-          "ar": "كنب الديوانية",
-          "en": "Diwaniya sofa",
-          "dar": "هيكل خشب صلب، سفنج عالي الكثافة، وقماش مقاوم للاستخدام اليومي.",
-          "den": "Solid wood frame, high-density foam and a hard-wearing fabric."
+          "x": 22,
+          "y": 72,
+          "ar": "الجلسة الأرضية المبطّنة",
+          "en": "Upholstered floor seating",
+          "dar": "هيكل خشب بسفنج عالي الكثافة وتنجيد بقماش كريمي ناعم، بالطول والمقاس الذي يناسب المجلس.",
+          "den": "A wood frame with high-density foam in soft cream fabric, made to the length of your majlis.",
+          "angle": 0
+        },
+        {
+          "x": 88,
+          "y": 45,
+          "ar": "الستاير",
+          "en": "Drapes",
+          "dar": "ستاير ثقيلة من الأرض للسقف بخامة شامبين تفصَّل على مقاس النوافذ.",
+          "den": "Floor-to-ceiling heavy drapes in champagne fabric, tailored to your windows.",
+          "angle": 0
+        },
+        {
+          "x": 12,
+          "y": 45,
+          "ar": "ألواح الحائط",
+          "en": "Wall panels",
+          "dar": "ألواح بنقش هندسي ناعم تُركَّب على الحائط.",
+          "den": "Panels with a soft geometric relief fixed to the wall.",
+          "angle": 0
+        },
+        {
+          "x": 35,
+          "y": 58,
+          "ar": "التنجيد والوسائد",
+          "en": "Upholstery and cushions",
+          "dar": "وسائد بألوان هادئة وتنجيد مفصّل على الجلسة كلها.",
+          "den": "Cushions in calm tones and upholstery tailored along the whole seating.",
+          "angle": 1
+        },
+        {
+          "x": 20,
+          "y": 30,
+          "ar": "ألواح الحائط المزخرفة",
+          "en": "Decorated wall panels",
+          "dar": "إطارات بارزة بنقوش تُصنَّع حسب التصميم.",
+          "den": "Raised framed panels with patterns made to your design.",
+          "angle": 1
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "living",
@@ -346,17 +388,39 @@ window.NOOR_DEFAULT = {
         "Coffee table",
         "Curtains"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/living-1.jpg"
+      ],
       "hotspots": [
         {
-          "x": 45,
-          "y": 64,
-          "ar": "الكنبة",
-          "en": "The sofa",
-          "dar": "نختار معك القماش واللون والمقاس بما يناسب الغرفة.",
-          "den": "We choose fabric, colour and size with you."
+          "x": 78,
+          "y": 75,
+          "ar": "الكنبة بوكليه",
+          "en": "Bouclé sofa",
+          "dar": "هيكل خشب وسفنج وقماش بوكليه دافئ، بأي مقاس زاوية تريده.",
+          "den": "Wood frame, foam and warm bouclé fabric, in any corner size you need.",
+          "angle": 0
+        },
+        {
+          "x": 35,
+          "y": 40,
+          "ar": "جدار خشب شرائح",
+          "en": "Wood-slat feature wall",
+          "dar": "شرائح خشب مثبّتة بإضاءة مخفية خلفها.",
+          "den": "Wood slats fixed with hidden lighting behind them.",
+          "angle": 0
+        },
+        {
+          "x": 88,
+          "y": 30,
+          "ar": "الستاير",
+          "en": "Drapes",
+          "dar": "طبقتان: شيفون خفيف وقماش ثقيل بلون هادئ.",
+          "den": "Two layers: light sheers and a heavy fabric in a calm tone.",
+          "angle": 0
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "dining",
@@ -372,17 +436,58 @@ window.NOOR_DEFAULT = {
         "Dining table",
         "Upholstered chairs"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/dining-1.jpg",
+        "assets/rooms/dining-2.jpg"
+      ],
       "hotspots": [
         {
-          "x": 50,
-          "y": 58,
-          "ar": "طاولة السفرة",
-          "en": "Dining table",
-          "dar": "خشب طبيعي بتشطيب يدوي ومقاس حسب عدد الأفراد.",
-          "den": "Natural wood, hand-finished, sized for your household."
+          "x": 40,
+          "y": 70,
+          "ar": "كراسي السفرة المنجّدة",
+          "en": "Upholstered dining chairs",
+          "dar": "كراسي بقماش بوكليه كريمي وأرجل خشب داكنة.",
+          "den": "Chairs in cream bouclé with dark wooden legs.",
+          "angle": 0
+        },
+        {
+          "x": 30,
+          "y": 30,
+          "ar": "ألواح الحائط المبطّنة",
+          "en": "Padded wall panels",
+          "dar": "ألواح مبطّنة بقماش توبي تُركَّب على الحائط خلف الطاولة.",
+          "den": "Taupe padded fabric panels fixed to the wall behind the table.",
+          "angle": 0
+        },
+        {
+          "x": 80,
+          "y": 35,
+          "ar": "الستاير",
+          "en": "Drapes",
+          "dar": "ستاير كتان ثقيلة تفصَّل على النوافذ.",
+          "den": "Heavy linen drapes tailored to the windows.",
+          "angle": 0
+        },
+        {
+          "x": 72,
+          "y": 65,
+          "ar": "الكراسي من قريب",
+          "en": "Chairs up close",
+          "dar": "تنجيد ناعم وخياطة نظيفة وحواف مريحة.",
+          "den": "Soft upholstery, clean stitching and comfortable edges.",
+          "angle": 1
+        },
+        {
+          "x": 22,
+          "y": 35,
+          "ar": "تنجيد الحائط",
+          "en": "Wall upholstery",
+          "dar": "مربعات مبطّنة بأحجام مختلفة على الحائط كله.",
+          "den": "Padded panels in varied sizes across the whole wall.",
+          "angle": 1
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "master",
@@ -400,17 +505,67 @@ window.NOOR_DEFAULT = {
         "Padded headboard",
         "Blackout curtains"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/master-1.jpg",
+        "assets/rooms/master-2.jpg"
+      ],
       "hotspots": [
         {
-          "x": 50,
-          "y": 40,
+          "x": 38,
+          "y": 62,
           "ar": "ظهر السرير",
           "en": "Headboard",
-          "dar": "تبطين بالقماش أو الجلد بتصميم تختاره.",
-          "den": "Padded in fabric or leather, in a design you choose."
+          "dar": "ظهر عالٍ مبطّن بالمخمل بخياطة قنوات طولية.",
+          "den": "A tall velvet headboard with vertical channel stitching.",
+          "angle": 0
+        },
+        {
+          "x": 20,
+          "y": 35,
+          "ar": "تنجيد الحائط خلف السرير",
+          "en": "Wall upholstery behind the bed",
+          "dar": "ألواح مبطّنة داخل إطارات بنفس قماش السرير.",
+          "den": "Padded framed panels in the same fabric as the bed.",
+          "angle": 0
+        },
+        {
+          "x": 48,
+          "y": 75,
+          "ar": "البنش المنجّد",
+          "en": "Upholstered bench",
+          "dar": "بنش بقماش كريمي بنهاية السرير.",
+          "den": "A cream upholstered bench at the foot of the bed.",
+          "angle": 0
+        },
+        {
+          "x": 85,
+          "y": 40,
+          "ar": "الستاير",
+          "en": "Drapes",
+          "dar": "ستاير تعتيم بطبقة شيفون.",
+          "den": "Blackout drapes with a sheer layer.",
+          "angle": 0
+        },
+        {
+          "x": 40,
+          "y": 45,
+          "ar": "الخياطة والتنجيد",
+          "en": "Stitching and upholstery",
+          "dar": "خياطة منتظمة وحشو متساوٍ يظهران من قريب.",
+          "den": "Even stitching and filling you can see up close.",
+          "angle": 1
+        },
+        {
+          "x": 75,
+          "y": 55,
+          "ar": "لوح الحائط المبطّن",
+          "en": "Padded wall panel",
+          "dar": "لوح طويل مبطّن بقنوات رأسية.",
+          "den": "A tall padded panel with vertical channels.",
+          "angle": 1
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "studio",
@@ -428,17 +583,49 @@ window.NOOR_DEFAULT = {
         "Seating",
         "Lighting"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/studio-1.jpg",
+        "assets/rooms/studio-2.jpg"
+      ],
       "hotspots": [
         {
-          "x": 30,
-          "y": 45,
-          "ar": "ألواح العزل",
+          "x": 25,
+          "y": 35,
+          "ar": "ألواح العزل الصوتي",
           "en": "Acoustic panels",
-          "dar": "ألواح مبطّنة تخفف الصدى وتعزل الصوت.",
-          "den": "Padded panels reduce echo and insulate sound."
+          "dar": "ألواح مبطّنة بالقماش بتصميم هندسي تقلل الصدى وتعزل الصوت.",
+          "den": "Fabric-wrapped panels in a geometric layout that cut echo and insulate sound.",
+          "angle": 0
+        },
+        {
+          "x": 48,
+          "y": 65,
+          "ar": "الكنبة الجلد",
+          "en": "Leather sofa",
+          "dar": "كنبة جلد مريحة لجلسات التسجيل الطويلة.",
+          "den": "A comfortable leather sofa for long sessions.",
+          "angle": 0
+        },
+        {
+          "x": 28,
+          "y": 68,
+          "ar": "كرسي المكتب",
+          "en": "Office chair",
+          "dar": "كرسي دوّار بقماش رمادي وجلد، بمسند ظهر عالٍ.",
+          "den": "A swivel chair in grey fabric and leather with a high backrest.",
+          "angle": 1
+        },
+        {
+          "x": 65,
+          "y": 25,
+          "ar": "ألواح سداسية",
+          "en": "Hexagon panels",
+          "dar": "ألواح عزل سداسية مبطّنة بألوان متباينة.",
+          "den": "Padded hexagon acoustic panels in contrasting tones.",
+          "angle": 1
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "cinema",
@@ -456,17 +643,77 @@ window.NOOR_DEFAULT = {
         "Cinema seats",
         "Blackout curtains"
       ],
-      "angles": [],
+      "angles": [
+        "assets/rooms/cinema-1.jpg",
+        "assets/rooms/cinema-2.jpg",
+        "assets/rooms/cinema-3.jpg"
+      ],
       "hotspots": [
         {
-          "x": 50,
-          "y": 66,
+          "x": 15,
+          "y": 40,
+          "ar": "ألواح العزل الصوتي",
+          "en": "Acoustic panels",
+          "dar": "ألواح مبطّنة بقماش فحمي تغطي الحيطان وتعزل الصوت.",
+          "den": "Charcoal fabric-wrapped panels cover the walls and insulate sound.",
+          "angle": 0
+        },
+        {
+          "x": 48,
+          "y": 62,
           "ar": "مقاعد السينما",
           "en": "Cinema seats",
-          "dar": "جلد وسفنج مريح بمسند وحامل كوب.",
-          "den": "Leather and foam with armrests and cup holders."
+          "dar": "مقاعد ريكلاينر بقماش مودرن وجلد على الأذرع، بصفّين.",
+          "den": "Recliner seats in modern fabric with leather arms, in two rows.",
+          "angle": 0
+        },
+        {
+          "x": 50,
+          "y": 10,
+          "ar": "سقف النجوم",
+          "en": "Star ceiling",
+          "dar": "سقف بإضاءة ألياف ضوئية خافتة.",
+          "den": "A ceiling with soft fibre-optic lighting.",
+          "angle": 0
+        },
+        {
+          "x": 48,
+          "y": 58,
+          "ar": "المقاعد من الجنب",
+          "en": "Seats from the side",
+          "dar": "مسند أذرع وحامل كوب وفشار بين المقعدين.",
+          "den": "Armrests, cup holders and popcorn between the seats.",
+          "angle": 1
+        },
+        {
+          "x": 80,
+          "y": 30,
+          "ar": "الألواح من قريب",
+          "en": "Panels up close",
+          "dar": "تنجيد نظيف بخطوط مستقيمة وفواصل متساوية.",
+          "den": "Clean upholstery with straight lines and even gaps.",
+          "angle": 1
+        },
+        {
+          "x": 50,
+          "y": 58,
+          "ar": "الكراسي من الوش",
+          "en": "Seats from the front",
+          "dar": "ظهر مبطّن ومسند رأس وخياطة ظاهرة وأذرع جلد.",
+          "den": "Padded back, headrest, visible stitching and leather arms.",
+          "angle": 2
+        },
+        {
+          "x": 13,
+          "y": 70,
+          "ar": "القماش والجلد",
+          "en": "Fabric and leather",
+          "dar": "تركيبة قماش مودرن مع جلد على الأذرع.",
+          "den": "Modern fabric combined with leather on the arms.",
+          "angle": 2
         }
-      ]
+      ],
+      "hidden": false
     },
     {
       "id": "gaming",
@@ -494,7 +741,8 @@ window.NOOR_DEFAULT = {
           "dar": "تنجيد مريح لجلسات طويلة.",
           "den": "Comfortable upholstery for long sessions."
         }
-      ]
+      ],
+      "hidden": true
     }
   ],
   "fabrics": [
