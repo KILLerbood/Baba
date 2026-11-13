@@ -220,6 +220,41 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-s
 .info-hs{margin-top:14px;padding:14px 16px;border-radius:12px;background:rgba(226,194,122,.12);border:1px solid rgba(226,194,122,.3);animation:fade .35s}
 .info-hs b{color:var(--gold-2)}
 
+/* facts + consultation */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.fact{background:var(--cream);border:1px solid var(--sand);border-radius:var(--radius);padding:22px 20px;transition:transform .3s,box-shadow .3s}
+.fact:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.fact h3{font-size:1.1rem;margin-bottom:6px;color:var(--ink)}
+.fact p{color:var(--muted);font-size:.93rem}
+.consult{background:radial-gradient(70% 120% at 50% 0,rgba(226,194,122,.2),transparent 70%),var(--ink);color:var(--cream);text-align:center}
+.consult .lead{color:var(--sand)}
+@media (max-width:980px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+
+/* enter button + villa plan */
+.enter-btn{position:absolute;bottom:34px;inset-inline-start:50%;translate:0;left:50%;right:auto;z-index:3;opacity:0;pointer-events:none;box-shadow:0 12px 40px -8px rgba(226,194,122,.8)}
+.enter-btn{animation:none}
+.inside{background:var(--cream)}
+.plan-wrap{position:relative;overflow-x:auto;border-radius:22px;-webkit-overflow-scrolling:touch}
+.plan{position:relative;min-width:640px;user-select:none;-webkit-user-select:none}
+.plan-svg{display:block;width:100%;height:auto}
+.plan-svg text{font-family:var(--font-ar);text-anchor:middle;pointer-events:none}
+.plan-svg .wall{stroke:#2a241e;stroke-width:7;stroke-linejoin:round}
+.plan-svg .rname{fill:#2a241e;font-weight:800;paint-order:stroke;stroke:#fffaf0;stroke-width:5;stroke-linejoin:round}
+.plan-svg .pin circle{fill:#c19a4b;stroke:#fffaf0;stroke-width:3}
+.plan-svg .pin .pn{fill:#2b1f0a;font-size:18px;font-weight:800}
+.room-g{cursor:pointer;outline:none}
+.room-g .floor{transition:fill .25s}
+.room-g:hover .floor,.room-g:focus-visible .floor{fill:#fff3d6}
+.room-g:hover .wall,.room-g:focus-visible .wall{stroke:#c19a4b}
+.room-g .pin{transition:transform .25s}
+.room-g:hover .pin circle{fill:#e2c27a}
+.plan-tip{position:absolute;z-index:4;background:rgba(20,17,15,.94);color:var(--cream);padding:10px 14px;border-radius:12px;display:grid;gap:2px;pointer-events:none;max-width:240px;box-shadow:var(--shadow)}
+.plan-tip[hidden]{display:none}
+.plan-tip b{font-size:1rem}.plan-tip span{font-size:.8rem;opacity:.8}.plan-tip em{font-style:normal;color:var(--gold-2);font-weight:600;font-size:.85rem}
+.plan-hint{text-align:center;color:var(--muted);margin-top:16px}
+@media (max-width:760px){.enter-btn{bottom:70px}}
+
 /* inner pages */
 .inner .site-header{background:rgba(20,17,15,.92);backdrop-filter:blur(14px)}
 .nav a[aria-current="page"]{opacity:1;color:var(--gold-2)}

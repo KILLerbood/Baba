@@ -74,6 +74,7 @@
   }
   // Photos whose shape differs a lot from the frame are shown whole over a blurred copy, others fill the frame.
   function fitSlides() {
+    if (!$("#slideView")) return;
     const box = $("#slideView").getBoundingClientRect();
     if (!box.width) return;
     const frame = box.width / box.height;
@@ -127,6 +128,109 @@
         </div>
       </button>`).join("");
   }
+  /* ---------- villa plan (top view) ---------- */
+  const PLAN = {
+    // room id -> [x, y, w, h, floor colour]
+    diwaniya: [20, 20, 320, 300, "#eadcc0"], living: [340, 20, 320, 340, "#efe3cd"], dining: [20, 320, 320, 300, "#e8d9bd"],
+    master: [660, 20, 320, 210, "#eadfcb"], studio: [660, 230, 160, 160, "#dcd0bb"], gaming: [820, 230, 160, 160, "#d3cbbf"],
+    cinema: [660, 390, 320, 230, "#cfc6b8"]
+  };
+  const r_ = (x, y, w, h, f, rx = 4, extra = "") => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${f}" ${extra}/>`;
+  const c_ = (x, y, r, f, extra = "") => `<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${extra}/>`;
+  function furniture(id) {
+    let s = "";
+    if (id === "diwaniya") {
+      s += r_(96, 96, 184, 190, "#dccaa4", 6);
+      s += r_(34, 34, 46, 272, "#f6efe2", 8, 'stroke="#b9a37a" stroke-width="2"') + r_(34, 34, 292, 46, "#f6efe2", 8, 'stroke="#b9a37a" stroke-width="2"') + r_(280, 34, 46, 272, "#f6efe2", 8, 'stroke="#b9a37a" stroke-width="2"');
+      for (let i = 0; i < 9; i++) { s += r_(40, 46 + i * 28, 28, 20, "#a99a7e", 5); s += r_(272 + 8, 46 + i * 28, 28, 20, "#a99a7e", 5); }
+      for (let i = 0; i < 9; i++) s += r_(46 + i * 31, 40, 22, 28, "#a99a7e", 5);
+      s += r_(150, 150, 76, 44, "#b08a3e", 6) + r_(150, 218, 76, 34, "#b08a3e", 6);
+    }
+    if (id === "living") {
+      s += r_(420, 110, 200, 150, "#d6c3a0", 6);
+      s += r_(380, 34, 240, 16, "#4a3d30", 3);
+      s += r_(354, 140, 62, 200, "#a39373", 10) + r_(354, 282, 250, 58, "#a39373", 10);
+      for (let i = 0; i < 3; i++) s += r_(362, 160 + i * 52, 40, 36, "#c5b595", 8);
+      s += c_(512, 205, 32, "#fbf6ec", 'stroke="#c9b68a" stroke-width="3"') + r_(580, 90, 56, 56, "#8f7a58", 10);
+    }
+    if (id === "dining") {
+      s += r_(30, 340, 14, 260, "#5b4631", 3);
+      s += r_(80, 408, 200, 92, "#6b4a2f", 6, 'stroke="#4a3320" stroke-width="2"');
+      for (let i = 0; i < 5; i++) { s += r_(90 + i * 38, 372, 26, 26, "#efe6d2", 7, 'stroke="#a48f68" stroke-width="2"'); s += r_(90 + i * 38, 510, 26, 26, "#efe6d2", 7, 'stroke="#a48f68" stroke-width="2"'); }
+      s += r_(48, 440, 26, 26, "#efe6d2", 7, 'stroke="#a48f68" stroke-width="2"') + r_(286, 440, 26, 26, "#efe6d2", 7, 'stroke="#a48f68" stroke-width="2"');
+    }
+    if (id === "master") {
+      s += r_(730, 96, 200, 110, "#d9c7a4", 6);
+      s += r_(756, 34, 148, 18, "#8a7a5a", 5) + r_(760, 52, 140, 130, "#f3ead8", 8, 'stroke="#b9a37a" stroke-width="2"');
+      s += r_(772, 60, 52, 30, "#ffffff", 8) + r_(836, 60, 52, 30, "#ffffff", 8);
+      s += r_(722, 36, 28, 28, "#6b4a2f", 4) + r_(912, 36, 28, 28, "#6b4a2f", 4) + r_(772, 190, 116, 26, "#cbbb98", 8);
+      s += r_(950, 60, 20, 130, "#5b4631", 3);
+      for (let i = 0; i < 7; i++) s += r_(670 + i * 42, 24, 36, 10, "#8a7a5a", 3);
+    }
+    if (id === "studio") {
+      s += r_(672, 242, 110, 26, "#6b4a2f", 4) + c_(727, 288, 12, "#3a3733") + r_(680, 346, 110, 30, "#a9784a", 8);
+      for (let i = 0; i < 4; i++) s += `<path d="M${666} ${262 + i * 22}l8 8-8 8-8-8z" fill="#3a3733"/>`;
+      s += r_(792, 244, 20, 20, "#2b2723", 3) + r_(792, 280, 20, 20, "#2b2723", 3);
+    }
+    if (id === "gaming") {
+      s += r_(832, 240, 112, 24, "#5b4631", 4) + r_(850, 236, 26, 6, "#1b1815", 2) + r_(896, 236, 26, 6, "#1b1815", 2);
+      s += c_(862, 282, 12, "#8c2a2a") + c_(904, 282, 12, "#8c2a2a") + r_(846, 348, 110, 32, "#6b6e75", 9) + c_(836, 330, 14, "#4a4d54") + c_(962, 322, 14, "#4a4d54");
+      s += r_(970, 292, 6, 54, "#111", 2) + r_(826, 230, 150, 4, "#7a4bd1", 2);
+    }
+    if (id === "cinema") {
+      s += r_(720, 398, 200, 8, "#111", 2);
+      for (let i = 0; i < 4; i++) { s += r_(722 + i * 50, 450, 36, 40, "#4c4a47", 9) + r_(722 + i * 50, 522, 36, 44, "#4c4a47", 9); }
+      for (let i = 0; i < 6; i++) { s += r_(664, 414 + i * 34, 8, 26, "#2b2927", 2) + r_(968, 414 + i * 34, 8, 26, "#2b2927", 2); }
+      s += r_(768, 498, 18, 14, "#e8c36a", 3);
+    }
+    return s;
+  }
+  function planSVG() {
+    const ord = ["diwaniya", "living", "dining", "master", "studio", "gaming", "cinema"];
+    let g = "";
+    ord.forEach((id) => {
+      const idx = DATA.rooms.findIndex((r) => r.id === id);
+      if (idx < 0 || DATA.rooms[idx].hidden) return;
+      const [x, y, w, h, fl] = PLAN[id], room = DATA.rooms[idx];
+      const small = w < 200;
+      g += `<g class="room-g" data-r="${idx}" tabindex="0" role="button" aria-label="${esc(nm(room))}">
+        <rect class="floor" x="${x}" y="${y}" width="${w}" height="${h}" fill="${fl}"/>
+        ${furniture(id)}
+        <rect class="wall" x="${x}" y="${y}" width="${w}" height="${h}" fill="none"/>
+        <g class="pin" transform="translate(${x + w / 2} ${y + h / 2 - (small ? 4 : 8)})"><circle r="${small ? 15 : 19}"/><text class="pn" y="${small ? 6 : 7}">${ord.indexOf(id) + 1}</text></g>
+        <text class="rname" x="${x + w / 2}" y="${y + h / 2 + (small ? 34 : 44)}" style="font-size:${small ? 17 : 23}px">${esc(nm(room))}</text>
+      </g>`;
+    });
+    const foyer = `<g class="foyer"><rect x="340" y="360" width="320" height="260" fill="#f3ecdc"/><rect x="340" y="360" width="320" height="260" fill="none" class="wall"/>
+      <rect x="470" y="602" width="60" height="18" fill="#c19a4b"/><path d="M500 590v-120" stroke="#c19a4b" stroke-width="3" stroke-dasharray="7 7" fill="none"/>
+      <path d="M488 488l12-18 12 18" fill="none" stroke="#c19a4b" stroke-width="3"/>
+      ${c_(380, 400, 16, "#7b8a5a")} ${c_(620, 400, 16, "#7b8a5a")} ${r_(470, 380, 60, 20, "#5b4631", 3)}
+      <text class="rname" x="500" y="552" style="font-size:20px;fill:#8a7a5a">${t("plan.foyer")}</text></g>`;
+    return `<svg viewBox="0 0 1000 640" class="plan-svg" role="img" aria-label="${t("plan.title")}">
+      <defs><filter id="pshadow" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".5"/></filter></defs>
+      <rect x="10" y="10" width="980" height="620" rx="22" fill="#2a241e" filter="url(#pshadow)"/>
+      ${foyer}${g}</svg>`;
+  }
+  function renderPlan() {
+    const box = $("#villaPlan"); if (!box) return;
+    box.innerHTML = planSVG() + `<div class="plan-tip" id="planTip" hidden></div>`;
+    const tip = $("#planTip", box);
+    $$(".room-g", box).forEach((el) => {
+      const room = DATA.rooms[+el.dataset.r];
+      const show = (e) => {
+        const tags = (lang === "ar" ? room.tags_ar : room.tags_en) || [];
+        tip.innerHTML = `<b>${esc(nm(room))}</b><span>${esc(tags.join(" · "))}</span><em>${t("plan.enter")}</em>`;
+        tip.hidden = false;
+        const r = box.getBoundingClientRect(), x = (e.clientX || r.left + r.width / 2) - r.left, y = (e.clientY || r.top + r.height / 2) - r.top;
+        tip.style.left = clamp(x + 14, 8, r.width - tip.offsetWidth - 8) + "px"; tip.style.top = clamp(y + 14, 8, r.height - tip.offsetHeight - 8) + "px";
+      };
+      el.addEventListener("pointermove", show); el.addEventListener("pointerenter", show);
+      el.addEventListener("pointerleave", () => { tip.hidden = true; });
+      el.addEventListener("click", () => { tip.hidden = true; openRoom(+el.dataset.r); });
+      el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openRoom(+el.dataset.r); } });
+    });
+  }
+
   const vw = { r: null, a: 0 };
   function openRoom(i) {
     vw.r = DATA.rooms[i]; vw.a = 0;
@@ -170,9 +274,9 @@
     vw.a = (vw.a + d + n) % n; drawViewer();
   }
   function bindRooms() {
-    if (!$("#roomsGrid")) return;
+    if (!$("#roomModal")) return;
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#roomModal").hidden) closeRoom(); });
-    $("#roomsGrid").addEventListener("click", (e) => { const b = e.target.closest(".room"); if (b) openRoom(+b.dataset.r); });
+    if ($("#roomsGrid")) $("#roomsGrid").addEventListener("click", (e) => { const b = e.target.closest(".room"); if (b) openRoom(+b.dataset.r); });
     $("#roomModal").addEventListener("click", (e) => { if (e.target.hasAttribute("data-close")) closeRoom(); });
     $("#vPrev").addEventListener("click", () => turn(-1));
     $("#vNext").addEventListener("click", () => turn(1));
@@ -363,6 +467,8 @@
       copy.style.opacity = fade; copy.style.transform = `translateY(${p * -60}px) scale(${1 - p * 0.06})`;
       copy.style.pointerEvents = fade < 0.2 ? "none" : "";
       cue.style.opacity = clamp(1 - p * 8, 0, 0.8);
+      const eb = $("#enterBtn");
+      if (eb) { const o = clamp((p - 0.8) / 0.15, 0, 1); eb.style.opacity = o; eb.style.pointerEvents = o < 0.3 ? "none" : "auto"; eb.style.transform = `translate(-50%, ${(1 - o) * 14}px)`; }
     }
     addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     addEventListener("resize", update);
@@ -417,7 +523,7 @@
       </a>`).join("");
   }
   function renderAll() {
-    applyI18n(); renderHomeCards(); renderSteps(); renderRooms(); renderFabrics(); renderCatalog(); fillFormOptions();
+    applyI18n(); renderHomeCards(); renderSteps(); renderPlan(); renderRooms(); renderFabrics(); renderCatalog(); fillFormOptions();
     drawBuilder(false); observeReveals();
     if ($("#roomModal") && !$("#roomModal").hidden) drawViewer(true);
     if (window.__paintBuildNote) window.__paintBuildNote();

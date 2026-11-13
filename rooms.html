@@ -16,21 +16,14 @@
 
 <section class="page-head"><div class="wrap"><h1 data-i18n="rooms.title"></h1><p data-i18n="rooms.sub"></p></div></section>
 <main>
+  <section class="section inside" id="inside">
+    <div class="wrap">
+      <div class="plan-wrap"><div class="plan" id="villaPlan"></div></div>
+      <p class="plan-hint" data-i18n="plan.hint"></p>
+    </div>
+  </section>
   <section class="section"><div class="wrap"><div class="rooms" id="roomsGrid"></div></div></section>
 </main>
-<div class="modal" id="roomModal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-card" role="dialog" aria-modal="true">
-    <button class="modal-x" data-close type="button" aria-label="close">×</button>
-    <div class="viewer" id="viewer">
-      <div class="viewer-img" id="viewerImg"></div>
-      <button class="arrow prev" id="vPrev" type="button" aria-label="previous"><span></span></button>
-      <button class="arrow next" id="vNext" type="button" aria-label="next"><span></span></button>
-      <p class="viewer-hint" data-i18n="rooms.hint"></p>
-    </div>
-    <div class="viewer-info" id="viewerInfo"></div>
-  </div>
-</div>
 
 <script src="config.js"></script>
 <script src="js/data.js"></script>
