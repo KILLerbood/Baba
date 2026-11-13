@@ -316,3 +316,11 @@ Using exactly the same home cinema recliner seat, same workshop, same camera pos
 - لو ظهرت Limit reached، استنى لحد وقت التجديد المكتوب أو استخدم حساب Gemini تاني.
 - لو القطعة اتغيّر شكلها بين صورتين، أعد الصورة بإضافة: `Keep the shape, camera and lighting identical to the first oak frame image.`
 - خطوة "اللون" في الموقع بتغيّر لون الصورة تقريبيًا بفلتر. لو عايز لون حقيقي، اعمل صورة بنفس البرومبت مع تغيير اللون وسمّيها `finished-<القماش>-<اللون>.jpg` وقول لي أربطها.
+
+---
+
+# نسخة الكمبيوتر للفيلا (بالعرض، الباب قدام) — `assets/plan/villa-top-wide.jpg`
+بعد ما تتولّد: غيّر `WIDE_PLAN = false` إلى `true` في `js/app.js`، وظبّط إحداثيات الغرف (`PLAN3D_WIDE`) على الصورة الجديدة.
+```text
+Using the attached top-down 3D cutaway villa image as the exact reference for rooms, furniture and style, redraw the same villa as a WIDE landscape 16:9 isometric top-down cutaway, NOT rotated sideways: the main entrance door is on the front long wall facing the viewer at the bottom centre, with the same rooms re-arranged side by side (diwaniya on one end, living and dining in the middle, master bedroom, studio, cinema room and gaming room along the back). Real unedited architectural visualisation photo look, soft daylight, 16:9 landscape. Image only.
+```

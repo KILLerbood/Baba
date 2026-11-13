@@ -139,10 +139,11 @@
     gaming: [26, 73, 9, 64, 44, 83],
     master: [73, 75, 57, 64, 91, 83]
   };
+  const WIDE_PLAN = false;
   const wideMQ = matchMedia("(min-width:900px)");
   function renderPlan() {
     const box = $("#villaPlan"); if (!box) return;
-    const wide = wideMQ.matches;
+    const wide = WIDE_PLAN && wideMQ.matches; // set WIDE_PLAN = true once a real landscape villa image (villa-top-wide.jpg) exists
     const order = ["diwaniya", "living", "dining", "master", "studio", "gaming", "cinema"];
     const btns = Object.keys(PLAN3D).map((id) => {
       const idx = DATA.rooms.findIndex((r) => r.id === id);
@@ -152,8 +153,20 @@
       return `<button class="reg3" type="button" data-r="${idx}" aria-label="${esc(nm(room))}" style="left:${l}%;top:${tp}%;width:${r - l}%;height:${b - tp}%">
         <span class="pin3" style="left:${px - l >= 0 ? ((px - l) / (r - l)) * 100 : 50}%;top:${((py - tp) / (b - tp)) * 100}%"><b>${order.indexOf(id) + 1}</b><em>${esc(nm(room))}</em></span></button>`;
     }).join("");
-    box.innerHTML = `<div class="plan3d${wide ? " wide" : ""}"><img src="assets/plan/villa-top${wide ? "-wide" : ""}.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div>`;
-    $$(".reg3", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
+    const items = order.map((id, n) => {
+      const idx = DATA.rooms.findIndex((r) => r.id === id); if (idx < 0 || DATA.rooms[idx].hidden) return "";
+      const room = DATA.rooms[idx];
+      return `<button type="button" class="pl-item" data-r="${idx}"><b>${n + 1}</b><span><strong>${esc(nm(room))}</strong><small>${esc(ds(room))}</small></span></button>`;
+    }).join("");
+    const kids = DATA.rooms.find((r) => r.soon && !r.hidden);
+    const soonItem = kids ? `<div class="pl-item soon"><b>+</b><span><strong>${esc(nm(kids))}</strong><small>${t("rooms.soon")}</small></span></div>` : "";
+    box.innerHTML = `<div class="plan-layout"><aside class="plan-list">${items}${soonItem}</aside><div class="plan3d${wide ? " wide" : ""}"><img src="assets/plan/villa-top${wide ? "-wide" : ""}.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div></div>`;
+    $$(".reg3, .pl-item[data-r]", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
+    $$(".pl-item[data-r]", box).forEach((el) => {
+      const reg = () => $(`.reg3[data-r="${el.dataset.r}"]`, box);
+      el.addEventListener("mouseenter", () => reg() && reg().classList.add("hl"));
+      el.addEventListener("mouseleave", () => reg() && reg().classList.remove("hl"));
+    });
   }
 
   wideMQ.addEventListener("change", () => { if (DATA && $("#villaPlan")) renderPlan(); });
