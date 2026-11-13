@@ -13,6 +13,7 @@ Gemini بيحدد عدد الصور في اليوم، فوزّعها على أي
 
 **الجاهز بالفعل:** الكنبة كاملة (11)، وكرسي الاسترخاء كامل (11)، وكرسي السفرة (3: هيكل بلوط، سفنج، مخمل). علامة ✅ جنب كل صورة موجودة.
 **قاعدة التصميم:** المطاط الأخضر على القاعدة والضهر، والدراعين والضهر متنجّدين بالكامل، والخشب الباين القاعدة والرجلين بس. كرسي السفرة بـ 4 رجول بالظبط.
+**الاستك الأخضر:** يتدبّس من جوه على الوجوه الداخلية للهيكل، ومايبانش منه ولا دبابيس على حرف الخشب. في صورة السفنج لازم يتغطى بالكامل ومايبانش أخضر خالص. الصور اللي عليها ⚠️ لازم تتعاد بالبرومبت الجديد.
 
 ---
 
@@ -20,7 +21,7 @@ Gemini بيحدد عدد الصور في اليوم، فوزّعها على أي
 
 ## 1) هيكل بلوط — `sofa/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden three-seater sofa frame: solid oak wooden three-seater sofa frame with open slatted back, curved arms and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden three-seater sofa frame: solid oak wooden three-seater sofa frame with open slatted back, curved arms and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest and stapled to the INNER faces of the frame rails, so no staples or strap ends are visible on top of or on the outside of the wood, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 2) هيكل جوز غامق — `sofa/frame-walnut.jpg` ✅ موجودة
@@ -33,9 +34,9 @@ Using exactly the same three-seater sofa frame design, same workshop, same camer
 Using exactly the same three-seater sofa frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 4) السفنج — `sofa/foam.jpg` ✅ موجودة
+## 4) السفنج — `sofa/foam.jpg` ⚠️ موجودة بس لازم تتعاد (الاستك الأخضر باين)
 ```text
-Using exactly the same oak three-seater sofa frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the backrest padded with thick white foam wrapped in cream polyester wadding, three loose seat cushion cores of white foam wrapped in white polyester fibre on the seat, a strip of green rubber webbing visible at the front edge. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak three-seater sofa frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the backrest padded with thick white foam wrapped in cream polyester wadding, three loose seat cushion cores of white foam wrapped in white polyester fibre on the seat, the green rubber webbing completely hidden under the padding with no green visible anywhere. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
 ## 5) مخمل — `sofa/finished-velvet.jpg` ✅ موجودة
@@ -79,7 +80,7 @@ Using exactly the same three-seater sofa, same workshop, same camera position, f
 
 ## 12) هيكل بلوط — `armchair/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden lounge armchair frame: solid oak wooden lounge armchair frame with open sides, curved arms, a deep seat and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden lounge armchair frame: solid oak wooden lounge armchair frame with open sides, curved arms, a deep seat and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest and stapled to the INNER faces of the frame rails, so no staples or strap ends are visible on top of or on the outside of the wood, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 13) هيكل جوز غامق — `armchair/frame-walnut.jpg` ✅ موجودة
@@ -92,9 +93,9 @@ Using exactly the same lounge armchair frame design, same workshop, same camera 
 Using exactly the same lounge armchair frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 15) السفنج — `armchair/foam.jpg` ✅ موجودة
+## 15) السفنج — `armchair/foam.jpg` ⚠️ موجودة بس لازم تتعاد (الاستك الأخضر باين)
 ```text
-Using exactly the same oak lounge armchair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the back padded with thick white foam wrapped in cream polyester wadding, one loose deep seat cushion core of white foam wrapped in white polyester fibre on the seat, a strip of green rubber webbing visible at the front edge. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak lounge armchair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the back padded with thick white foam wrapped in cream polyester wadding, one loose deep seat cushion core of white foam wrapped in white polyester fibre on the seat, the green rubber webbing completely hidden under the padding with no green visible anywhere. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
 ## 16) مخمل — `armchair/finished-velvet.jpg` ✅ موجودة
@@ -138,7 +139,7 @@ Using exactly the same lounge armchair, same workshop, same camera position, fra
 
 ## 23) هيكل بلوط — `chair/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden dining chair frame: simple classic wooden dining chair frame with NO arms and exactly FOUR legs and no other legs, posts or stretchers: two straight tapered front legs and two rear legs rising past the seat to form the backrest posts joined by a gently curved top rail with three slim vertical slats, a plain square seat frame. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden dining chair frame: simple classic wooden dining chair frame with NO arms and exactly FOUR legs and no other legs, posts or stretchers: two straight tapered front legs and two rear legs rising past the seat to form the backrest posts joined by a gently curved top rail with three slim vertical slats, a plain square seat frame. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest and stapled to the INNER faces of the frame rails, so no staples or strap ends are visible on top of or on the outside of the wood, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 24) هيكل جوز غامق — `chair/frame-walnut.jpg`
@@ -151,9 +152,9 @@ Using exactly the same dining chair frame design, same workshop, same camera pos
 Using exactly the same dining chair frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 26) السفنج — `chair/foam.jpg` ✅ موجودة
+## 26) السفنج — `chair/foam.jpg` ⚠️ موجودة بس لازم تتعاد (الاستك الأخضر باين)
 ```text
-Using exactly the same oak dining chair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: a thick white foam seat pad wrapped in cream polyester wadding fitted on the seat over the green webbing with a strip of green webbing visible at the front edge, and a thick white foam panel wrapped in cream wadding between the two rear posts. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak dining chair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: a thick white foam seat pad wrapped in cream polyester wadding fitted on the seat completely hiding the green webbing so no green is visible anywhere, and a thick white foam panel wrapped in cream wadding between the two rear posts. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
 ## 27) مخمل — `chair/finished-velvet.jpg` ✅ موجودة
@@ -256,7 +257,7 @@ Using exactly the same double bed, same workshop, same camera position, framing 
 
 ## 45) هيكل بلوط — `cinema/frame-oak.jpg`
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden home cinema recliner seat frame: wooden and steel home cinema recliner seat frame with wide arms, a reclining mechanism, a deep seat and a tall back, no padding. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden home cinema recliner seat frame: wooden and steel home cinema recliner seat frame with wide arms, a reclining mechanism, a deep seat and a tall back, no padding. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest and stapled to the INNER faces of the frame rails, so no staples or strap ends are visible on top of or on the outside of the wood, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 46) هيكل جوز غامق — `cinema/frame-walnut.jpg`
