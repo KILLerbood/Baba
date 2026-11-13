@@ -11,7 +11,8 @@
 العدد الكلي: 5 قطع × (3 هياكل + سفنج + 7 أقمشة) = 55 صورة.
 Gemini بيحدد عدد الصور في اليوم، فوزّعها على أيام أو على حسابين.
 
-**الجاهز بالفعل:** `sofa/frame-oak.jpg` و`sofa/foam.jpg`.
+**الجاهز بالفعل:** الكنبة كاملة (11)، وكرسي الاسترخاء كامل (11)، وكرسي السفرة (3: هيكل بلوط، سفنج، مخمل). علامة ✅ جنب كل صورة موجودة.
+**قاعدة التصميم:** المطاط الأخضر على القاعدة والضهر، والدراعين والضهر متنجّدين بالكامل، والخشب الباين القاعدة والرجلين بس. كرسي السفرة بـ 4 رجول بالظبط.
 
 ---
 
@@ -19,125 +20,125 @@ Gemini بيحدد عدد الصور في اليوم، فوزّعها على أي
 
 ## 1) هيكل بلوط — `sofa/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden three-seater sofa frame: solid oak wooden three-seater sofa frame with open slatted back, curved arms and tapered legs. Visible joinery and dowels, no foam and no fabric at all, elastic webbing straps and zigzag springs across the seat base, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden three-seater sofa frame: solid oak wooden three-seater sofa frame with open slatted back, curved arms and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
-## 2) هيكل جوز غامق — `sofa/frame-walnut.jpg`
+## 2) هيكل جوز غامق — `sofa/frame-walnut.jpg` ✅ موجودة
 ```text
 Using exactly the same three-seater sofa frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is dark walnut with a rich brown grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 3) هيكل زان فاتح — `sofa/frame-beech.jpg`
+## 3) هيكل زان فاتح — `sofa/frame-beech.jpg` ✅ موجودة
 ```text
 Using exactly the same three-seater sofa frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 4) السفنج — `sofa/foam.jpg` ✅ موجودة
 ```text
-Using exactly the same oak three-seater sofa frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: thick white and cream foam blocks cut to shape for the seat cushions and the back and arms, cream cotton wadding wrapped over the foam. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak three-seater sofa frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the backrest padded with thick white foam wrapped in cream polyester wadding, three loose seat cushion cores of white foam wrapped in white polyester fibre on the seat, a strip of green rubber webbing visible at the front edge. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
-## 5) مخمل — `sofa/finished-velvet.jpg`
+## 5) مخمل — `sofa/finished-velvet.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 6) كتان — `sofa/finished-linen.jpg`
+## 6) كتان — `sofa/finished-linen.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 7) شنيل — `sofa/finished-chenille.jpg`
+## 7) شنيل — `sofa/finished-chenille.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 8) بوكليه — `sofa/finished-boucle.jpg`
+## 8) بوكليه — `sofa/finished-boucle.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 9) شمواه — `sofa/finished-suede.jpg`
+## 9) شمواه — `sofa/finished-suede.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 10) جلد طبيعي — `sofa/finished-leather.jpg`
+## 10) جلد طبيعي — `sofa/finished-leather.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 11) جلد صناعي — `sofa/finished-pu.jpg`
+## 11) جلد صناعي — `sofa/finished-pu.jpg` ✅ موجودة
 ```text
-Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, three seat cushions and three back cushions, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same three-seater sofa, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, three loose seat cushions and three loose back cushions with piping, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the thin pale oak base rail and the short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ---
 
 # كرسي استرخاء — فولدر `assets/build/armchair/`
 
-## 12) هيكل بلوط — `armchair/frame-oak.jpg`
+## 12) هيكل بلوط — `armchair/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden lounge armchair frame: solid oak wooden lounge armchair frame with open sides, curved arms, a deep seat and tapered legs. Visible joinery and dowels, no foam and no fabric at all, elastic webbing straps and zigzag springs across the seat base, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden lounge armchair frame: solid oak wooden lounge armchair frame with open sides, curved arms, a deep seat and tapered legs. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
-## 13) هيكل جوز غامق — `armchair/frame-walnut.jpg`
+## 13) هيكل جوز غامق — `armchair/frame-walnut.jpg` ✅ موجودة
 ```text
 Using exactly the same lounge armchair frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is dark walnut with a rich brown grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 14) هيكل زان فاتح — `armchair/frame-beech.jpg`
+## 14) هيكل زان فاتح — `armchair/frame-beech.jpg` ✅ موجودة
 ```text
 Using exactly the same lounge armchair frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 15) السفنج — `armchair/foam.jpg`
+## 15) السفنج — `armchair/foam.jpg` ✅ موجودة
 ```text
-Using exactly the same oak lounge armchair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: thick white and cream foam blocks cut to shape for the deep seat, back and arms, cream cotton wadding wrapped over the foam. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak lounge armchair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: the arms and the back padded with thick white foam wrapped in cream polyester wadding, one loose deep seat cushion core of white foam wrapped in white polyester fibre on the seat, a strip of green rubber webbing visible at the front edge. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
-## 16) مخمل — `armchair/finished-velvet.jpg`
+## 16) مخمل — `armchair/finished-velvet.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 17) كتان — `armchair/finished-linen.jpg`
+## 17) كتان — `armchair/finished-linen.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 18) شنيل — `armchair/finished-chenille.jpg`
+## 18) شنيل — `armchair/finished-chenille.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 19) بوكليه — `armchair/finished-boucle.jpg`
+## 19) بوكليه — `armchair/finished-boucle.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 20) شمواه — `armchair/finished-suede.jpg`
+## 20) شمواه — `armchair/finished-suede.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 21) جلد طبيعي — `armchair/finished-leather.jpg`
+## 21) جلد طبيعي — `armchair/finished-leather.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 22) جلد صناعي — `armchair/finished-pu.jpg`
+## 22) جلد صناعي — `armchair/finished-pu.jpg` ✅ موجودة
 ```text
-Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, one deep seat cushion and one back cushion, the oak legs and the oak arm tops still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same lounge armchair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, one loose deep seat cushion and one back cushion, the arms and the back fully upholstered with no bare wood on them, the only wood visible being the four short tapered legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ---
 
 # كرسي سفرة — فولدر `assets/build/chair/`
 
-## 23) هيكل بلوط — `chair/frame-oak.jpg`
+## 23) هيكل بلوط — `chair/frame-oak.jpg` ✅ موجودة
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden dining chair frame: solid oak wooden dining chair frame with a curved backrest, a plain wooden seat base and four tapered legs. Visible joinery and dowels, no foam and no fabric at all, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden dining chair frame: simple classic wooden dining chair frame with NO arms and exactly FOUR legs and no other legs, posts or stretchers: two straight tapered front legs and two rear legs rising past the seat to form the backrest posts joined by a gently curved top rail with three slim vertical slats, a plain square seat frame. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 24) هيكل جوز غامق — `chair/frame-walnut.jpg`
@@ -150,44 +151,44 @@ Using exactly the same dining chair frame design, same workshop, same camera pos
 Using exactly the same dining chair frame design, same workshop, same camera position, framing and lighting as the first oak frame image, but the wood is pale light beech with a fine even grain. Still bare, no foam and no fabric. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
-## 26) السفنج — `chair/foam.jpg`
+## 26) السفنج — `chair/foam.jpg` ✅ موجودة
 ```text
-Using exactly the same oak dining chair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: a thick white foam seat pad and a foam back pad fitted, cream cotton wadding wrapped over the foam. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
+Using exactly the same oak dining chair frame, same workshop, same camera position, framing and lighting as the first image, now with the padding fitted but no fabric cover yet: a thick white foam seat pad wrapped in cream polyester wadding fitted on the seat over the green webbing with a strip of green webbing visible at the front edge, and a thick white foam panel wrapped in cream wadding between the two rear posts. Raw un-covered upholstery padding clearly visible, the oak frame still visible. A real unedited photograph of an upholstery workshop in progress, 4:3 landscape. Image only.
 ```
 
-## 27) مخمل — `chair/finished-velvet.jpg`
+## 27) مخمل — `chair/finished-velvet.jpg` ✅ موجودة
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in deep navy blue velvet with a soft sheen, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 28) كتان — `chair/finished-linen.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in natural oatmeal linen with a visible woven texture, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 29) شنيل — `chair/finished-chenille.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in olive green chenille with a soft plush texture, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 30) بوكليه — `chair/finished-boucle.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in ivory bouclé fabric with a soft looped texture, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 31) شمواه — `chair/finished-suede.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in chocolate brown microsuede with a soft matte nap, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 32) جلد طبيعي — `chair/finished-leather.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in tan genuine leather with natural grain and subtle stitching, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ## 33) جلد صناعي — `chair/finished-pu.jpg`
 ```text
-Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, a padded seat and a padded curved back, the oak legs and the oak top rail still visible. Real unedited photograph, 4:3 landscape. Image only.
+Using exactly the same dining chair, same workshop, same camera position, framing and lighting as the first image, now fully upholstered and finished in smooth black faux leather with a clean satin finish, neat tailored seams, a padded seat and a padded backrest panel between the rear posts, exactly four legs, no bare wood on the backrest, the only wood visible being the four legs. Real unedited photograph, 4:3 landscape. Image only.
 ```
 
 ---
@@ -255,7 +256,7 @@ Using exactly the same double bed, same workshop, same camera position, framing 
 
 ## 45) هيكل بلوط — `cinema/frame-oak.jpg`
 ```text
-A real unedited product photograph of a bare, unupholstered solid oak wooden home cinema recliner seat frame: wooden and steel home cinema recliner seat frame with wide arms, a reclining mechanism, a deep seat and a tall back, no padding. Visible joinery and dowels, no foam and no fabric at all, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
+A real unedited product photograph of a bare, unupholstered solid oak wooden home cinema recliner seat frame: wooden and steel home cinema recliner seat frame with wide arms, a reclining mechanism, a deep seat and a tall back, no padding. Visible joinery and dowels, no foam and no fabric at all, green rubber elastic upholstery webbing straps (bright green with thin black stripes) woven tightly in a basket-weave across the seat base and the backrest, in a clean upholstery workshop, placed on a clean light-grey workshop floor against a plain soft warm-grey backdrop, centred, the whole piece fully visible with space around it, soft even studio lighting, front three-quarter view at eye height, sharp natural wood grain. 4:3 landscape. Image only.
 ```
 
 ## 46) هيكل جوز غامق — `cinema/frame-walnut.jpg`
