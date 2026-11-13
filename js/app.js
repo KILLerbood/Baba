@@ -141,8 +141,8 @@
   };
   const WIDE_PLAN = false;
   const wideMQ = matchMedia("(min-width:900px)");
-  function renderPlan() {
-    const box = $("#villaPlan"); if (!box) return;
+  function renderPlan() { document.querySelectorAll(".villa-plan").forEach(renderPlanInto); }
+  function renderPlanInto(box) {
     const wide = WIDE_PLAN && wideMQ.matches; // set WIDE_PLAN = true once a real landscape villa image (villa-top-wide.jpg) exists
     const order = ["diwaniya", "living", "dining", "master", "studio", "gaming", "cinema"];
     const btns = Object.keys(PLAN3D).map((id) => {
@@ -157,7 +157,7 @@
     $$(".reg3", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
   }
 
-  wideMQ.addEventListener("change", () => { if (DATA && $("#villaPlan")) renderPlan(); });
+  wideMQ.addEventListener("change", () => { if (DATA && $(".villa-plan")) renderPlan(); });
 
   const vw = { r: null, a: 0 };
   function openRoom(i) {
@@ -386,9 +386,11 @@
       ticking = false;
       const total = hero.offsetHeight - innerHeight;
       const p = clamp(-hero.getBoundingClientRect().top / total, 0, 1);
-      const desk = false; // no panning: the whole villa is shown at once
-      const e1 = desk ? 0.4 : 0.5, e2 = desk ? 0.55 : 0.7, e3 = desk ? 0.7 : 1;
-      const a = clamp(p / e1, 0, 1), b = clamp((p - e1) / (e2 - e1), 0, 1), c = clamp((p - (e2 - 0.02)) / (e3 - e2 + 0.02), 0, 1), d = desk ? clamp((p - e3) / (0.92 - e3), 0, 1) : 1;
+      const desk = matchMedia("(min-width:900px)").matches;
+      // laptop: frames, zoom through the door, fade into the cream villa section below. phone: the villa appears inside the scene.
+      const a = clamp(p / (desk ? 0.55 : 0.5), 0, 1);
+      const b = desk ? clamp((p - 0.55) / 0.45, 0, 1) : clamp((p - 0.5) / 0.2, 0, 1);
+      const c = desk ? 0 : clamp((p - 0.68) / 0.32, 0, 1), d = 1;
       if (imgs.length) {
         const pos = a * (imgs.length - 1), i = Math.floor(pos), f = pos - i;
         imgs.forEach((im, k) => { im.style.opacity = k <= i ? 1 : k === i + 1 ? f : 0; });

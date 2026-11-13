@@ -349,7 +349,7 @@ html[lang="en"] .link-arrow::after{content:" →"}
 }
 
 /* plan inside the hero scene */
-.hero-light{position:absolute;inset:0;z-index:3;background:radial-gradient(circle at 50% 52%,#fff6dc,#f4ead6 70%);opacity:0;pointer-events:none}
+.hero-light{position:absolute;inset:0;z-index:3;background:radial-gradient(circle at 50% 52%,#fff6dc,#f6efe4 62%);opacity:0;pointer-events:none}
 .hero-plan{position:absolute;inset:0;z-index:4;background:var(--cream);color:var(--ink);opacity:0;pointer-events:none;display:grid;place-items:center;padding:78px 16px 14px}
 .hp-inner{transform-origin:50% 90%;display:flex;flex-direction:column;align-items:center;will-change:transform}
 .hero-plan .sec-head{margin-bottom:10px}
@@ -367,16 +367,17 @@ html[lang="en"] .link-arrow::after{content:" →"}
 .room.soon .room-open{color:var(--muted);font-weight:700}
 .room.soon .room-bg.ph{background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 12px,#efe3cb 12px,#efe3cb 24px)}
 
-/* desktop: whole villa visible at once, light scene (no heavy blend modes) */
+/* laptop: the villa sits in the cream section right after the door scene; phone: inside the scene */
 .plan-layout{display:flex;justify-content:center;width:100%}
 .reg3.hl{background:rgba(226,194,122,.28)}
 .hero-frames{will-change:transform;backface-visibility:hidden}
 .hero-frames img{will-change:opacity}
 .hero-glow{mix-blend-mode:normal!important}
 .hp-inner{will-change:transform}
+#inside{display:none}
 @media (min-width:900px){
-  .hero{height:380vh}
-  .hero-plan .plan3d{max-width:min(560px,calc((100vh - 190px) * .5586));min-width:0}
-  .hero-plan .sec-head p{display:none}
-  .hero-plan .plan-hint{display:none}
+  .hero{height:360vh}
+  .hero-plan{display:none}
+  #inside{display:block;padding-top:40px}
+  #inside .plan3d{max-width:520px}
 }
