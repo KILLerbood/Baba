@@ -400,6 +400,7 @@
       copy.style.opacity = fade; copy.style.transform = `translateY(${a * -60}px) scale(${1 - a * 0.06})`;
       copy.style.pointerEvents = fade < 0.2 ? "none" : "";
       cue.style.opacity = clamp(1 - p * 8, 0, 0.8);
+      const vig = $(".hero-vignette"); if (vig) vig.style.opacity = String(1 - clamp(a * 3, 0, 1) * 0.85); // photos brighten once the title has faded
       light.style.opacity = clamp((b - 0.4) / 0.6, 0, 1) * (1 - clamp(c * 2.5, 0, 1));
       hp.style.opacity = clamp(c * 2.5, 0, 1);
       hpi.style.transform = `scale(${1 + (1 - ease(c)) * 1.7})`;

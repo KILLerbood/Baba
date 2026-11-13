@@ -70,8 +70,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   animation:breathe 7s ease-in-out infinite;z-index:0}
 .hero-frames:not(:empty)~.hero-glow{opacity:.35;mix-blend-mode:screen}
 .hero-vignette{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(10,8,6,.55) 0,rgba(10,8,6,.3) 30%,rgba(10,8,6,.5) 60%,rgba(10,8,6,.78) 100%),
-  radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(10,8,6,.55));pointer-events:none}
+  linear-gradient(180deg,rgba(10,8,6,.38) 0,rgba(10,8,6,.1) 28%,rgba(10,8,6,.22) 62%,rgba(10,8,6,.5) 100%),
+  radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(10,8,6,.3));pointer-events:none}
 .hero-copy{text-shadow:0 2px 24px rgba(0,0,0,.55)}
 @media (max-width:760px){.hero-title{font-size:clamp(3rem,18vw,4.6rem)}.hero-sub{font-size:1rem}.hero-copy{padding:0 22px}}
 @keyframes breathe{0%,100%{opacity:.85}50%{opacity:1}}
@@ -372,7 +372,8 @@ html[lang="en"] .link-arrow::after{content:" →"}
 .reg3.hl{background:rgba(226,194,122,.28)}
 .hero-frames{will-change:transform;backface-visibility:hidden}
 .hero-frames img{will-change:opacity}
-.hero-glow{mix-blend-mode:normal!important}
+.hero-glow{display:none}
+.hero-vignette{will-change:opacity}
 .hp-inner{will-change:transform}
 #inside{display:none}
 @media (min-width:900px){
