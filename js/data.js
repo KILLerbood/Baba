@@ -736,17 +736,8 @@ window.NOOR_DEFAULT = {
       ],
       "hotspots": [
         {
-          "x": 30,
-          "y": 88,
-          "ar": "الكنبة الركنة",
-          "en": "Corner sofa",
-          "dar": "كنبة ركنة بقماش كحلي سميك وهيكل خشب وسفنج عالي الكثافة، بمقاس الغرفة.",
-          "den": "A deep navy fabric corner sofa on a wood frame with high-density foam, made to the room.",
-          "angle": 0
-        },
-        {
-          "x": 10,
-          "y": 45,
+          "x": 15,
+          "y": 35,
           "ar": "ألواح الحائط المبطّنة",
           "en": "Padded wall panels",
           "dar": "ألواح مبطّنة بقماش رمادي غامق تدفّئ الغرفة وتخفف الصدى.",
@@ -754,25 +745,43 @@ window.NOOR_DEFAULT = {
           "angle": 0
         },
         {
-          "x": 73,
-          "y": 72,
+          "x": 50,
+          "y": 62,
           "ar": "كراسي الجيمنج",
           "en": "Gaming chairs",
-          "dar": "كراسي بتنجيد قماش وجلد، ومسند ظهر عالٍ مريح لجلسات طويلة.",
-          "den": "Fabric and leather upholstery with a high backrest for long sessions.",
+          "dar": "كراسي ريسينج بتنجيد قماش أسود وجلد أحمر، ومسند ظهر عالٍ لجلسات طويلة.",
+          "den": "Racing-style chairs in black fabric with red leather and a high backrest for long sessions.",
           "angle": 0
         },
         {
-          "x": 33,
-          "y": 45,
-          "ar": "دولاب عرض الفيجرز",
-          "en": "Figure display cabinet",
-          "dar": "دواليب زجاج بإضاءة LED لعرض المجسمات والكؤوس.",
-          "den": "Glass cabinets with LED lighting to show off figures and trophies.",
+          "x": 65,
+          "y": 64,
+          "ar": "ركنة الكنبة والبوف",
+          "en": "Sofa and beanbag corner",
+          "dar": "كنبة رمادي وبوف كبير قدام التلفزيون، تُفصَّل بالمقاس والقماش.",
+          "den": "A grey sofa and large beanbags facing the TV, made to size and fabric.",
+          "angle": 0
+        },
+        {
+          "x": 66,
+          "y": 28,
+          "ar": "رف الفيجرز",
+          "en": "Figure shelf",
+          "dar": "رف عرض للمجسمات والتحف بإضاءة هادية.",
+          "den": "A display shelf for figures and collectibles with soft lighting.",
+          "angle": 0
+        },
+        {
+          "x": 30,
+          "y": 60,
+          "ar": "مكتب الجيمنج",
+          "en": "Gaming desk",
+          "dar": "مكتب بشاشتين وجهاز بزجاج مضيء وإضاءة خلفية.",
+          "den": "A desk with two monitors, a glass-panel PC and backlighting.",
           "angle": 0
         }
       ],
-      "hidden": true
+      "hidden": false
     }
   ],
   "fabrics": [
