@@ -367,20 +367,16 @@ html[lang="en"] .link-arrow::after{content:" →"}
 .room.soon .room-open{color:var(--muted);font-weight:700}
 .room.soon .room-bg.ph{background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 12px,#efe3cb 12px,#efe3cb 24px)}
 
-/* desktop: plan (door at the front, not rotated) with a room list beside it */
-.plan-layout{display:flex;justify-content:center;align-items:center;gap:36px;width:100%}
-.plan-list{display:none}
-.reg3.hl{background:rgba(226,194,122,.28);box-shadow:inset 0 0 0 2px #c19a4b}
+/* desktop: big upright plan, camera walks from the door up through the house */
+.plan-layout{display:flex;justify-content:center;width:100%}
+.reg3.hl{background:rgba(226,194,122,.28)}
 @media (min-width:900px){
-  .plan-layout{max-width:1200px;margin-inline:auto}
-  .plan-list{display:grid;gap:10px;width:340px;flex:0 0 340px;align-content:center}
-  .pl-item{display:flex;align-items:center;gap:14px;text-align:start;padding:12px 16px;border-radius:16px;background:#fff;border:1px solid var(--sand);box-shadow:0 8px 22px -14px rgba(0,0,0,.35);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;font:inherit;color:var(--ink)}
-  .pl-item:hover{transform:translateX(-4px);border-color:var(--gold);box-shadow:0 12px 26px -12px rgba(193,154,75,.6)}
-  .pl-item b{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#e2c27a,#c19a4b);color:#2b1f0a}
-  .pl-item strong{display:block;font-size:1.02rem}
-  .pl-item small{display:block;color:var(--muted);font-size:.82rem;line-height:1.4}
-  .pl-item.soon{opacity:.65;cursor:default;border-style:dashed}
-  .pl-item.soon:hover{transform:none;border-color:var(--sand);box-shadow:0 8px 22px -14px rgba(0,0,0,.35)}
-  .hero-plan .plan3d{max-width:min(520px,92vw,calc((100vh - 200px) * .5586))}
+  .hero{height:680vh}
+  .hero-plan{padding:74px 0 0;display:block;box-sizing:border-box}
+  .hero-plan .hp-inner{width:100%;height:100%;display:grid;grid-template-rows:auto minmax(0,1fr);justify-items:center}
+  .hero-plan .sec-head{background:var(--cream);width:100%;margin:0;padding:12px 16px 10px;position:relative;z-index:2}
+  .hero-plan .plan-wrap{width:100%;height:auto;align-self:stretch;min-height:0;overflow:hidden;background:var(--cream)}
+  .hero-plan .plan-layout{align-items:flex-start}
+  .hero-plan .plan3d{width:min(820px,60vw);max-width:none;min-width:0;border-radius:0;box-shadow:none;flex:none;will-change:transform}
   .hero-plan .plan-hint{display:none}
 }

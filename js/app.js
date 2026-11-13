@@ -153,20 +153,8 @@
       return `<button class="reg3" type="button" data-r="${idx}" aria-label="${esc(nm(room))}" style="left:${l}%;top:${tp}%;width:${r - l}%;height:${b - tp}%">
         <span class="pin3" style="left:${px - l >= 0 ? ((px - l) / (r - l)) * 100 : 50}%;top:${((py - tp) / (b - tp)) * 100}%"><b>${order.indexOf(id) + 1}</b><em>${esc(nm(room))}</em></span></button>`;
     }).join("");
-    const items = order.map((id, n) => {
-      const idx = DATA.rooms.findIndex((r) => r.id === id); if (idx < 0 || DATA.rooms[idx].hidden) return "";
-      const room = DATA.rooms[idx];
-      return `<button type="button" class="pl-item" data-r="${idx}"><b>${n + 1}</b><span><strong>${esc(nm(room))}</strong><small>${esc(ds(room))}</small></span></button>`;
-    }).join("");
-    const kids = DATA.rooms.find((r) => r.soon && !r.hidden);
-    const soonItem = kids ? `<div class="pl-item soon"><b>+</b><span><strong>${esc(nm(kids))}</strong><small>${t("rooms.soon")}</small></span></div>` : "";
-    box.innerHTML = `<div class="plan-layout"><aside class="plan-list">${items}${soonItem}</aside><div class="plan3d${wide ? " wide" : ""}"><img src="assets/plan/villa-top${wide ? "-wide" : ""}.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div></div>`;
-    $$(".reg3, .pl-item[data-r]", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
-    $$(".pl-item[data-r]", box).forEach((el) => {
-      const reg = () => $(`.reg3[data-r="${el.dataset.r}"]`, box);
-      el.addEventListener("mouseenter", () => reg() && reg().classList.add("hl"));
-      el.addEventListener("mouseleave", () => reg() && reg().classList.remove("hl"));
-    });
+    box.innerHTML = `<div class="plan-layout"><div class="plan3d${wide ? " wide" : ""}"><img src="assets/plan/villa-top${wide ? "-wide" : ""}.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div></div>`;
+    $$(".reg3", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
   }
 
   wideMQ.addEventListener("change", () => { if (DATA && $("#villaPlan")) renderPlan(); });
@@ -398,7 +386,9 @@
       ticking = false;
       const total = hero.offsetHeight - innerHeight;
       const p = clamp(-hero.getBoundingClientRect().top / total, 0, 1);
-      const a = clamp(p / 0.5, 0, 1), b = clamp((p - 0.5) / 0.2, 0, 1), c = clamp((p - 0.68) / 0.32, 0, 1);
+      const desk = matchMedia("(min-width:900px)").matches;
+      const e1 = desk ? 0.4 : 0.5, e2 = desk ? 0.55 : 0.7, e3 = desk ? 0.7 : 1;
+      const a = clamp(p / e1, 0, 1), b = clamp((p - e1) / (e2 - e1), 0, 1), c = clamp((p - (e2 - 0.02)) / (e3 - e2 + 0.02), 0, 1), d = desk ? clamp((p - e3) / (1 - e3), 0, 1) : 1;
       if (imgs.length) {
         const pos = a * (imgs.length - 1), i = Math.floor(pos), f = pos - i;
         imgs.forEach((im, k) => { im.style.opacity = k <= i ? 1 : k === i + 1 ? f : 0; });
@@ -412,6 +402,11 @@
       hp.style.opacity = clamp(c * 2.5, 0, 1);
       hpi.style.transform = `scale(${1 + (1 - ease(c)) * 1.7})`;
       hp.style.pointerEvents = c > 0.9 ? "auto" : "none";
+      const pl = $(".plan3d", hp);
+      if (pl) {
+        if (desk) { const wrap = pl.closest(".plan-wrap"), over = Math.max(0, pl.offsetHeight - wrap.clientHeight); pl.style.transform = `translateY(${-(1 - ease(d)) * over}px)`; }
+        else pl.style.transform = "";
+      }
     }
     addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     addEventListener("resize", update);
