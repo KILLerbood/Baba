@@ -359,3 +359,6 @@ html[lang="en"] .link-arrow::after{content:" →"}
 .hero-plan .plan3d{max-width:min(520px,92vw,calc((100vh - 250px) * .5586));min-width:0}
 .hero-plan .plan-hint{margin-top:8px;font-size:.85rem}
 @media (max-width:760px){.hero-plan{padding-top:70px}.hero-plan .sec-head p{display:none}.hero-plan .plan3d{max-width:min(92vw,calc((100vh - 200px) * .5586))}}
+
+.plan3d.wide{max-width:min(1100px,94vw,calc((100vh - 230px) * 1.792))!important}
+.hero-plan .plan3d.wide{max-width:min(1100px,94vw,calc((100vh - 230px) * 1.792))}

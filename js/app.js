@@ -139,19 +139,24 @@
     gaming: [26, 73, 9, 64, 44, 83],
     master: [73, 75, 57, 64, 91, 83]
   };
+  const wideMQ = matchMedia("(min-width:900px)");
   function renderPlan() {
     const box = $("#villaPlan"); if (!box) return;
+    const wide = wideMQ.matches;
     const order = ["diwaniya", "living", "dining", "master", "studio", "gaming", "cinema"];
     const btns = Object.keys(PLAN3D).map((id) => {
       const idx = DATA.rooms.findIndex((r) => r.id === id);
       if (idx < 0 || DATA.rooms[idx].hidden) return "";
-      const [px, py, l, tp, r, b] = PLAN3D[id], room = DATA.rooms[idx];
+      let [px, py, l, tp, r, b] = PLAN3D[id]; const room = DATA.rooms[idx];
+      if (wide) { [px, py, l, tp, r, b] = [py, 100 - px, tp, 100 - r, b, 100 - l]; }
       return `<button class="reg3" type="button" data-r="${idx}" aria-label="${esc(nm(room))}" style="left:${l}%;top:${tp}%;width:${r - l}%;height:${b - tp}%">
         <span class="pin3" style="left:${px - l >= 0 ? ((px - l) / (r - l)) * 100 : 50}%;top:${((py - tp) / (b - tp)) * 100}%"><b>${order.indexOf(id) + 1}</b><em>${esc(nm(room))}</em></span></button>`;
     }).join("");
-    box.innerHTML = `<div class="plan3d"><img src="assets/plan/villa-top.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div>`;
+    box.innerHTML = `<div class="plan3d${wide ? " wide" : ""}"><img src="assets/plan/villa-top${wide ? "-wide" : ""}.jpg" alt="${esc(t("plan.title"))}" decoding="async">${btns}</div>`;
     $$(".reg3", box).forEach((el) => el.addEventListener("click", () => openRoom(+el.dataset.r)));
   }
+
+  wideMQ.addEventListener("change", () => { if (DATA && $("#villaPlan")) renderPlan(); });
 
   const vw = { r: null, a: 0 };
   function openRoom(i) {
