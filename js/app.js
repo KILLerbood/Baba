@@ -214,8 +214,15 @@
     v.addEventListener("pointerup", end); v.addEventListener("pointerleave", end);
   }
 
-  /* ---------- builder (real photo stages) ---------- */
-  const B = { step: 1, wood: "oak", foam: "medium", fabric: "velvet", color: -1, seats: 3 };
+  /* ---------- builder (real photo stages, per piece) ---------- */
+  const PIECES = [
+    { id: "sofa", ar: "كنب", en: "Sofa", form: "sofas", sizes: [["مقعدان", "2 seats"], ["ثلاثة مقاعد", "3 seats"], ["أربعة مقاعد", "4 seats"]] },
+    { id: "armchair", ar: "كرسي استرخاء", en: "Armchair", form: "chairs", sizes: [["عادي", "Standard"], ["عريض", "Wide"]] },
+    { id: "chair", ar: "كرسي سفرة", en: "Dining chair", form: "chairs", sizes: [["طقم ٤ كراسي", "Set of 4"], ["طقم ٦ كراسي", "Set of 6"], ["طقم ٨ كراسي", "Set of 8"]] },
+    { id: "bed", ar: "سرير", en: "Bed", form: "beds", sizes: [["سرير فردي", "Single"], ["سرير مزدوج", "Double"], ["سرير كينج", "King"]] },
+    { id: "cinema", ar: "مقعد سينما", en: "Cinema seat", form: "cinema", sizes: [["مقعد واحد", "1 seat"], ["صف مقعدين", "Row of 2"], ["صف أربعة مقاعد", "Row of 4"]] }
+  ];
+  const B = { step: 1, piece: "sofa", wood: "oak", foam: "medium", fabric: "velvet", color: -1, size: 1 };
   // swatches for the colour step (hue in degrees), -1 = the fabric as photographed
   const COLORS = [
     { c: "#7a2e3b", h: 345 }, { c: "#2f4a43", h: 165 }, { c: "#2c3e56", h: 215 }, { c: "#8a7a6a", h: 30 },
@@ -223,32 +230,38 @@
   ];
   // hue of each fabric as photographed, and whether it is nearly colourless (needs sepia before tinting)
   const BASE = { velvet: [220, 0], linen: [40, 1], chenille: [100, 0], boucle: [45, 1], suede: [25, 0], leather: [30, 0], pu: [0, 1] };
-  const STEP_KEYS = ["build.s1", "build.s2", "build.s3", "build.s4", "build.s5"];
+  const STEP_KEYS = ["build.piece", "build.s1", "build.s2", "build.s3", "build.s4", "build.s5"];
+  const pieceOf = () => PIECES.find((p) => p.id === B.piece) || PIECES[0];
   const IMG = {
-    frame: (w) => "assets/build/frame-" + w + ".jpg",
-    foam: () => "assets/build/foam.jpg",
-    finished: (f) => "assets/build/finished-" + f + ".jpg"
+    frame: (w) => "assets/build/" + B.piece + "/frame-" + w + ".jpg",
+    foam: () => "assets/build/" + B.piece + "/foam.jpg",
+    finished: (f) => "assets/build/" + B.piece + "/finished-" + f + ".jpg"
   };
   let stageShown = "";
   function stageCandidates() {
-    if (B.step === 1) return [IMG.frame(B.wood), IMG.frame("oak")];
-    if (B.step === 2) return [IMG.foam(), IMG.frame(B.wood), IMG.frame("oak")];
+    if (B.step <= 2) return [IMG.frame(B.wood), IMG.frame("oak")];
+    if (B.step === 3) return [IMG.foam(), IMG.frame(B.wood), IMG.frame("oak")];
     return [IMG.finished(B.fabric), IMG.foam(), IMG.frame(B.wood), IMG.frame("oak")];
   }
   function colourFilter() {
-    if (B.step < 4 || B.color < 0) return "none";
+    if (B.step < 5 || B.color < 0) return "none";
     const [bh, low] = BASE[B.fabric] || [0, 0], target = COLORS[B.color].h;
     const d = ((target - bh) % 360 + 360) % 360;
     return (low ? "sepia(.85) " : "") + "hue-rotate(" + d + "deg) saturate(" + (low ? 2.2 : 1.1) + ")";
   }
   function paintStage() {
     const box = $("#buildStage"); if (!box) return;
-    const a = $("#bpA"), b2 = $("#bpB");
+    const a = $("#bpA"), b2 = $("#bpB"), empty = $("#bEmpty");
     const list = stageCandidates();
     const tryNext = (i) => {
-      if (i >= list.length) return;
+      if (i >= list.length) {
+        a.classList.remove("on"); b2.classList.remove("on"); stageShown = "";
+        if (empty) { empty.hidden = false; empty.textContent = nm(pieceOf()) + " · " + t("build.soon"); }
+        return;
+      }
       const src = list[i], probe = new Image();
       probe.onload = () => {
+        if (empty) empty.hidden = true;
         if (src !== stageShown) {
           const incoming = a.classList.contains("on") ? b2 : a, outgoing = incoming === a ? b2 : a;
           incoming.src = src; incoming.classList.add("on"); outgoing.classList.remove("on"); stageShown = src;
@@ -261,40 +274,42 @@
     };
     tryNext(0);
     const badge = $("#bBadge");
-    if (badge) badge.textContent = B.step >= 5 ? t("build.seat" + B.seats) : "";
+    if (badge) badge.textContent = B.step >= 6 ? (pieceOf().sizes[B.size] || pieceOf().sizes[0])[lang === "ar" ? 0 : 1] : "";
   }
   function drawBuilder() {
     if (!$("#buildSteps")) return;
     $("#buildSteps").innerHTML = STEP_KEYS.map((k, i) =>
       `<li><button class="bstep ${i + 1 === B.step ? "on" : i + 1 < B.step ? "done" : ""}" data-s="${i + 1}" type="button">${i + 1}. ${t(k)}</button></li>`).join("");
     let o = "";
-    if (B.step === 1) o = ["oak", "walnut", "beech"].map((k) => `<button class="opt${B.wood === k ? " on" : ""}" data-k="wood" data-v="${k}">${t("build." + k)}</button>`).join("");
-    if (B.step === 2) o = ["soft", "medium", "firm"].map((k) => `<button class="opt${B.foam === k ? " on" : ""}" data-k="foam" data-v="${k}">${t("build." + k)}</button>`).join("");
-    if (B.step === 3) o = DATA.fabrics.map((f) => `<button class="opt opt-fab${B.fabric === f.id ? " on" : ""}" data-k="fabric" data-v="${f.id}"><i style="background-image:url('${esc(f.img || "")}')"></i>${esc(nm(f))}</button>`).join("");
-    if (B.step === 4) o = `<button class="opt${B.color < 0 ? " on" : ""}" data-k="color" data-v="-1">${t("build.original")}</button>` +
+    if (B.step === 1) o = PIECES.map((p) => `<button class="opt${B.piece === p.id ? " on" : ""}" data-k="piece" data-v="${p.id}">${esc(nm(p))}</button>`).join("");
+    if (B.step === 2) o = ["oak", "walnut", "beech"].map((k) => `<button class="opt${B.wood === k ? " on" : ""}" data-k="wood" data-v="${k}">${t("build." + k)}</button>`).join("");
+    if (B.step === 3) o = ["soft", "medium", "firm"].map((k) => `<button class="opt${B.foam === k ? " on" : ""}" data-k="foam" data-v="${k}">${t("build." + k)}</button>`).join("");
+    if (B.step === 4) o = DATA.fabrics.map((f) => `<button class="opt opt-fab${B.fabric === f.id ? " on" : ""}" data-k="fabric" data-v="${f.id}"><i style="background-image:url('${esc(f.img || "")}')"></i>${esc(nm(f))}</button>`).join("");
+    if (B.step === 5) o = `<button class="opt${B.color < 0 ? " on" : ""}" data-k="color" data-v="-1">${t("build.original")}</button>` +
       COLORS.map((c, i) => `<button class="dot${B.color === i ? " on" : ""}" data-k="color" data-v="${i}" style="--c:${c.c}" aria-label="${c.c}"></button>`).join("");
-    if (B.step === 5) o = [2, 3, 4].map((n) => `<button class="opt${B.seats === n ? " on" : ""}" data-k="seats" data-v="${n}">${t("build.seat" + n)}</button>`).join("");
+    if (B.step === 6) o = pieceOf().sizes.map((z, i) => `<button class="opt${B.size === i ? " on" : ""}" data-k="size" data-v="${i}">${z[lang === "ar" ? 0 : 1]}</button>`).join("");
     $("#buildOptions").innerHTML = o;
     $("#buildSummary").innerHTML = `<b>${t("build.summary")}:</b> ${buildText()}`;
     paintStage();
   }
   function buildText() {
-    const f = DATA.fabrics.find((x) => x.id === B.fabric);
+    const f = DATA.fabrics.find((x) => x.id === B.fabric), p = pieceOf();
     const col = B.color < 0 ? t("build.original") : COLORS[B.color].c.toUpperCase();
-    return [t("build." + B.wood), t("build." + B.foam), f ? nm(f) : "", col, t("build.seat" + B.seats)].join(" · ");
+    return [nm(p), t("build." + B.wood), t("build." + B.foam), f ? nm(f) : "", col, (p.sizes[B.size] || p.sizes[0])[lang === "ar" ? 0 : 1]].join(" · ");
   }
   function bindBuilder() {
     if (!$("#buildStage")) return;
-    $("#buildStage").innerHTML = `<div class="bphoto"><img id="bpA" class="bp" alt=""><img id="bpB" class="bp" alt=""></div><span class="bbadge" id="bBadge"></span>`;
+    $("#buildStage").innerHTML = `<div class="bphoto"><img id="bpA" class="bp" alt=""><img id="bpB" class="bp" alt=""><p class="bempty" id="bEmpty" hidden></p></div><span class="bbadge" id="bBadge"></span>`;
     $("#buildSteps").addEventListener("click", (e) => { const b = e.target.closest(".bstep"); if (!b) return; B.step = +b.dataset.s; drawBuilder(); });
     $("#buildOptions").addEventListener("click", (e) => {
       const b = e.target.closest("[data-k]"); if (!b) return;
-      const k = b.dataset.k; B[k] = k === "seats" || k === "color" ? +b.dataset.v : b.dataset.v;
+      const k = b.dataset.k; B[k] = k === "size" || k === "color" ? +b.dataset.v : b.dataset.v;
       if (k === "fabric") B.color = -1;
+      if (k === "piece") { B.size = 0; stageShown = ""; }
       drawBuilder();
     });
     $("#buildSend").addEventListener("click", () => {
-      try { sessionStorage.setItem("noor_build", buildText()); } catch (e) {}
+      try { sessionStorage.setItem("noor_build", buildText()); sessionStorage.setItem("noor_build_type", pieceOf().form); } catch (e) {}
       location.href = "request.html";
     });
   }
@@ -333,7 +348,7 @@
       const note = $("#buildNote"); note.hidden = false;
       const paint = () => { note.innerHTML = `<b>${t("form.build")}:</b> ${esc(pending)}`; };
       paint(); note.dataset.paint = "1"; window.__paintBuildNote = paint;
-      fillFormOptions(); if ($("#fType")) $("#fType").value = "sofas";
+      fillFormOptions(); try { const bt = sessionStorage.getItem("noor_build_type"); if ($("#fType") && bt) $("#fType").value = bt; } catch (e) {}
     }
     $$("input[name=hasM]").forEach((r) => r.addEventListener("change", () => { $("#dims").hidden = $("input[name=hasM]:checked").value !== "yes"; }));
     $("#reqForm").addEventListener("submit", async (e) => {
@@ -432,7 +447,7 @@
     drawBuilder(false); observeReveals();
     if ($("#roomModal") && !$("#roomModal").hidden) drawViewer(true);
     if (window.__paintBuildNote) window.__paintBuildNote();
-    if ($("#fType") && $("#fBuild") && $("#fBuild").value) $("#fType").value = $("#fType").value || "sofas";
+    
   }
   async function boot() {
     DATA = await window.NoorStore.getData();

@@ -43,7 +43,7 @@ npx --yes serve -l 4173 .
 
 ## ركّب قطعتك (صور حقيقية)
 
-برومبتات صور المراحل والأقمشة جاهزة في `prompts/builder-prompts.md`. حط الصور في `assets/build/` بالأسماء المكتوبة (`frame-oak/walnut/beech`, `foam`, `finished-<القماش>`). أي صورة ناقصة، الموقع بيستخدم اللي قبلها.
+برومبتات صور المراحل والأقمشة جاهزة في `prompts/builder-prompts.md`. حط الصور في `assets/build/<القطعة>/` (sofa, armchair, chair, bed, cinema) بالأسماء المكتوبة (`frame-oak/walnut/beech`, `foam`, `finished-<القماش>`). أي صورة ناقصة، الموقع بيستخدم اللي قبلها.
 
 ## الأدمن
 
