@@ -393,6 +393,43 @@
     addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     addEventListener("resize", update);
     update();
+    initWalkIn(frames[frames.length - 1]);
+  }
+
+  /* walk through the door, then zoom out onto the top-view villa */
+  function initWalkIn(doorImg) {
+    const eb = $("#enterBtn"), plan = $("#villaPlan"), target = $("#inside .plan-wrap");
+    if (!eb || !plan || !target) return;
+    let busy = false;
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches || !plan.animate;
+    const goTo = () => {
+      const y = target.getBoundingClientRect().top + scrollY - Math.max(70, (innerHeight - target.offsetHeight) / 2);
+      scrollTo({ top: Math.max(0, y), behavior: "instant" });
+    };
+    eb.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (busy) return;
+      if (still) { $("#inside").scrollIntoView({ behavior: "auto" }); return; }
+      busy = true;
+      const ov = document.createElement("div");
+      ov.style.cssText = "position:fixed;inset:0;z-index:300;overflow:hidden;background:#f4ead6;pointer-events:all";
+      const door = document.createElement("div");
+      door.style.cssText = `position:absolute;inset:0;background:url(${doorImg}) center/cover no-repeat;transform-origin:50% 52%`;
+      const light = document.createElement("div");
+      light.style.cssText = "position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,#fff6dc,#f4ead6 70%);opacity:0";
+      ov.append(door, light); document.body.append(ov);
+      const ease = "cubic-bezier(.55,.05,.35,1)";
+      door.animate([{ transform: "scale(1.18)" }, { transform: "scale(3.6)" }], { duration: 1100, easing: ease, fill: "forwards" });
+      light.animate([{ opacity: 0 }, { opacity: 0, offset: .55 }, { opacity: 1 }], { duration: 1100, easing: ease, fill: "forwards" })
+        .finished.then(() => {
+          target.style.overflow = "hidden"; target.style.borderRadius = "20px";
+          plan.style.transformOrigin = "50% 94%";
+          goTo();
+          const z = plan.animate([{ transform: "scale(2.7)", opacity: .2 }, { transform: "scale(1)", opacity: 1 }], { duration: 1700, easing: "cubic-bezier(.16,.7,.2,1)" });
+          ov.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 900, easing: "ease-out", fill: "forwards" }).finished.then(() => ov.remove());
+          z.finished.then(() => { target.style.overflow = ""; target.style.borderRadius = ""; plan.style.transformOrigin = ""; busy = false; });
+        });
+    });
   }
 
   /* ---------- effects ---------- */
