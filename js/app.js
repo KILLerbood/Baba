@@ -386,9 +386,9 @@
       ticking = false;
       const total = hero.offsetHeight - innerHeight;
       const p = clamp(-hero.getBoundingClientRect().top / total, 0, 1);
-      const desk = matchMedia("(min-width:900px)").matches;
+      const desk = false; // no panning: the whole villa is shown at once
       const e1 = desk ? 0.4 : 0.5, e2 = desk ? 0.55 : 0.7, e3 = desk ? 0.7 : 1;
-      const a = clamp(p / e1, 0, 1), b = clamp((p - e1) / (e2 - e1), 0, 1), c = clamp((p - (e2 - 0.02)) / (e3 - e2 + 0.02), 0, 1), d = desk ? clamp((p - e3) / (1 - e3), 0, 1) : 1;
+      const a = clamp(p / e1, 0, 1), b = clamp((p - e1) / (e2 - e1), 0, 1), c = clamp((p - (e2 - 0.02)) / (e3 - e2 + 0.02), 0, 1), d = desk ? clamp((p - e3) / (0.92 - e3), 0, 1) : 1;
       if (imgs.length) {
         const pos = a * (imgs.length - 1), i = Math.floor(pos), f = pos - i;
         imgs.forEach((im, k) => { im.style.opacity = k <= i ? 1 : k === i + 1 ? f : 0; });

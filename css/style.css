@@ -367,22 +367,16 @@ html[lang="en"] .link-arrow::after{content:" →"}
 .room.soon .room-open{color:var(--muted);font-weight:700}
 .room.soon .room-bg.ph{background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 12px,#efe3cb 12px,#efe3cb 24px)}
 
-/* desktop: big upright plan, camera walks from the door up through the house */
+/* desktop: whole villa visible at once, light scene (no heavy blend modes) */
 .plan-layout{display:flex;justify-content:center;width:100%}
 .reg3.hl{background:rgba(226,194,122,.28)}
+.hero-frames{will-change:transform;backface-visibility:hidden}
+.hero-frames img{will-change:opacity}
+.hero-glow{mix-blend-mode:normal!important}
+.hp-inner{will-change:transform}
 @media (min-width:900px){
-  .hero{height:680vh}
-  .hero-plan{padding:74px 0 0;display:block;box-sizing:border-box}
-  .hero-plan .hp-inner{width:100%;height:100%;display:grid;grid-template-rows:auto minmax(0,1fr);justify-items:center}
-  .hero-plan .sec-head{background:var(--cream);width:100%;margin:0;padding:12px 16px 10px;position:relative;z-index:2}
-  .hero-plan .plan-wrap{width:100%;height:auto;align-self:stretch;min-height:0;overflow:hidden;background:var(--cream)}
-  .hero-plan .plan-layout{align-items:flex-start}
-  .hero-plan .plan3d{width:min(820px,60vw);max-width:none;min-width:0;border-radius:0;box-shadow:none;flex:none;will-change:transform}
-  .hero-plan .plan-hint{display:none}
-}
-@media (min-width:900px) and (max-height:780px){
-  .hero-plan{padding-top:64px}
-  .hero-plan .sec-head{padding:6px 16px 6px}
+  .hero{height:380vh}
+  .hero-plan .plan3d{max-width:min(560px,calc((100vh - 190px) * .5586));min-width:0}
   .hero-plan .sec-head p{display:none}
-  .hero-plan .sec-head h2{font-size:1.35rem;margin:0}
+  .hero-plan .plan-hint{display:none}
 }
