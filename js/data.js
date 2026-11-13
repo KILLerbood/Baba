@@ -772,7 +772,7 @@ window.NOOR_DEFAULT = {
           "angle": 0
         }
       ],
-      "hidden": false
+      "hidden": true
     }
   ],
   "fabrics": [
