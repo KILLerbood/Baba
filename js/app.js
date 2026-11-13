@@ -55,7 +55,7 @@
     const cats = DATA.categories;
     cat.c = clamp(cat.c, 0, cats.length - 1);
     $("#catTabs").innerHTML = cats.map((c, i) =>
-      `<button class="tab${i === cat.c ? " on" : ""}" role="tab" data-c="${i}">${esc(nm(c))}</button>`).join("");
+      `<button class="tab${i === cat.c ? " on" : ""}" role="tab" data-c="${i}"><span class="tab-img">${c.items && c.items[0] && c.items[0].src ? `<img src="${esc(c.items[0].src)}" alt="" loading="lazy" draggable="false">` : ""}</span><span class="tab-name">${esc(nm(c))}</span></button>`).join("");
     renderSlides();
   }
   function renderSlides() {
